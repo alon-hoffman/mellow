@@ -1,13 +1,22 @@
 <template>
   <section class="container home text-center">
-    <h1>Home Page</h1>
-    <h5 class="text-center">
-      Powered up Frontend 
-    </h5>
-    <img alt="Vue logo" src="../assets/logo.png">
+    <div class="ctsbPE">
+      <div class="oFuOf">
+        <div class="iPePOS">
+          <div>
+            <h1> Trello brings all your tasks, teammates, and tools together</h1>
+            <p>Keep everything in the same place—even if your team isn't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <img alt="Vue logo"
+      src="https://images.ctfassets.net/rz1oowkt5gyp/5lDhjfcNTvIKeiBPtxRdQ7/67717ed94b8f6e7fb13a59c109933596/HeroBoard__CalendarView_4x.png?w=960&fm=webp">
   </section>
 
-  
+
 </template>
 
 <script>
@@ -23,6 +32,6 @@ export default {
   },
   methods: {
   }
-  
+
 }
 </script>
