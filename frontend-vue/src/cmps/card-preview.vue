@@ -1,6 +1,6 @@
 <template>
-    <section class="board-app">
-<h1>board-app</h1>
+    <section class="card-preview">
+<h1>card-preview</h1>
     </section>
     
   </template>

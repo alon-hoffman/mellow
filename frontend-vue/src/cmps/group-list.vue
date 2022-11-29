@@ -1,6 +1,6 @@
 <template>
-    <section class="board-app">
-<h1>board-app</h1>
+    <section class="group-list">
+<h1>group-list</h1>
     </section>
     
   </template>

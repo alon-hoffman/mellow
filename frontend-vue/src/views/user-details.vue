@@ -27,9 +27,8 @@ export default {
       // user: null
     }
   },
-  async created() {
-    // const user = await userService.getById(id)
-    // this.user = user
+  created(){
+
   },
   watch: {
     userId: {

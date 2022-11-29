@@ -9,6 +9,7 @@
       <router-link to="/">home</router-link>
       <router-link to="/login">Login / Signup</router-link>
     </nav>
+    {{hello}}
     <section class="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`">
         {{ loggedInUser.fullname }}
@@ -19,9 +20,21 @@
 </template>
 <script>
 export default {
+  data(){
+return {
+  route:this.$route
+}
+  },
+  created(){
+// console.log(`this.$route = `, this.$route)
+  },
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedinUser
+    },
+    hello(){
+
+      console.log(`this.$route = `, this.$route.path)
     },
   }
 }
