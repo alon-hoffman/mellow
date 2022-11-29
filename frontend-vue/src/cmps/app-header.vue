@@ -4,8 +4,8 @@
       <router-link to="/">
         <span role="img" aria-label="logo">🙏</span>
       </router-link>
-      <router-link to="/boardsPage">board app</router-link>
-      <router-link to="/boardsPage">boards</router-link>
+      <router-link to="/boards">Board app</router-link>
+      <router-link to="/boardsPage">Mellow</router-link>
       <router-link to="/">home</router-link>
       <router-link to="/login">Login / Signup</router-link>
     </nav>
