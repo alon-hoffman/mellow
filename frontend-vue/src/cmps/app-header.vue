@@ -4,10 +4,9 @@
       <router-link to="/">
         <span role="img" aria-label="logo">🙏</span>
       </router-link>
-      <router-link to="/boards/44">board app</router-link>
-      <router-link to="/boards">boards</router-link>
-      <router-link to="/home">home</router-link>
-      <router-link to="/chat">Chat</router-link>
+      <router-link to="/boardsPage">board app</router-link>
+      <router-link to="/boardsPage">boards</router-link>
+      <router-link to="/">home</router-link>
       <router-link to="/login">Login / Signup</router-link>
     </nav>
     <section class="loggedin-user" v-if="loggedInUser">

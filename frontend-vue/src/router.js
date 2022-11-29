@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import home from './views/home.vue'
-import chat from './views/chat.vue'
 import carApp from './views/car-app.vue'
 import boardsPage from './views/boards-page.vue'
 import boardApp from './views/board-app.vue'
