@@ -30,6 +30,24 @@
             border-radius: 3px;
             
         }
+        .add-user-btn{
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            background-color:#fff;
+        }
+        .add-user-img{
+            width: 17px;
+        }
+        .filter-btn{
+            display: flex;
+            align-items: center;
+        }
+        .filter-img-board{
+            width: 20px;
+        }
     }
     .board-header-left{
         gap: 10px;
