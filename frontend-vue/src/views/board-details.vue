@@ -5,14 +5,12 @@
     <div class="board-header">
       <div class="board-header-left">
         <h1 class="editable">Traco</h1>
-        <button class="transparent-btn">
-          <img class="star-img-board" src="../assets/icons/star-regular-2.png" alt="">
-          </button>
+        <button class="transparent-btn"><img class="star-img-board" src="../assets/icons/star-regular-2.png" alt=""></button>
       </div>
       <div class="board-header-right">
-        <button class="transparent-btn">Filter</button>
+        <button class="filter-btn"><img class="filter-img-board" src="../assets/icons/filter.png" />Filter</button>
         <div class="member-list"><span>AH</span><span>EH</span><span>IM</span></div>
-        <button><img src="../assets/icons/person_add.svg" /> share</button>
+        <button class="add-user-btn"><img class="add-user-img" src="../assets/icons/add-user.png" /> share</button>
         <button class="transparent-btn"><svg width="24" height="24" role="presentation" focusable="false"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
