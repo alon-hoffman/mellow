@@ -1,5 +1,6 @@
 <template>
-    <main class="gallery flex">
+    <main class="gallery-container flex justify-center full">
+      <article class="gallery flex">
       <aside class="gallery-sidebar">
         <nav class="flex column">
           <button class="gallery-nav-btn flex">
@@ -13,8 +14,8 @@
             <img src="../assets/icons/home.svg" alt="hm">
             Home</button>
         </nav>
-        <div class="flex">
-          Workspace
+        <div class="flex justify-between">
+          Workspaces
           <img src="../assets/icons/add.svg" alt="">
         </div>
       </aside>
@@ -30,7 +31,7 @@
             <div class="board-preview">
               Traco
               <div class="board-preview-options">
-                <img class="icon" src="../assets/icons/star_regular.svg" alt="star-regular">
+                <img class="icon" src="../assets/icons/star-regular.svg" alt="star-regular">
               </div>
             </div>
           </router-link>
@@ -39,7 +40,7 @@
           <div class="board-preview">
             Dummy board
             <div class="board-preview-options">
-              <img class="icon" src="../assets/icons/star_regular.svg" alt="star-regular">
+              <img class="icon" src="../assets/icons/star-regular.svg" alt="star-regular">
             </div>
           </div>
         </li>
@@ -47,7 +48,7 @@
           <div class="board-preview">
             Dummy board
             <div class="board-preview-options">
-              <img class="icon" src="../assets/icons/star_regular.svg" alt="star-regular">
+              <img class="icon" src="../assets/icons/star-regular.svg" alt="star-regular">
             </div>
           </div>
         </li>
@@ -55,7 +56,7 @@
           <div class="board-preview">
             Dummy board
             <div class="board-preview-options">
-              <img class="icon" src="../assets/icons/star_regular.svg" alt="star-regular">
+              <img class="icon" src="../assets/icons/star-regular.svg" alt="star-regular">
             </div>
           </div>
         </li>
@@ -63,7 +64,7 @@
           <div class="board-preview">
             Dummy board
             <div class="board-preview-options">
-              <img class="icon" src="../assets/icons/star_regular.svg" alt="star-regular">
+              <img class="icon" src="../assets/icons/star-regular.svg" alt="star-regular">
             </div>
           </div>
         </li>
@@ -78,7 +79,7 @@
       </ul>
     </section>
 
-
+  </article>
     </main>
   
     

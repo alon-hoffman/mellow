@@ -1,12 +1,12 @@
+.gallery-container{
+    background-color: #fbfbff;
+}
+
 .gallery{
     max-width: 1129px;
-    // font-size: 14px;
     margin: auto;
     margin-top: 2.85em;
-    background-color: #fbfbff;
     color: #172b4d;
-    // &-header{
-    // }
     &-sidebar{
         width: 272px;
         padding-inline: 1.2em;
@@ -22,6 +22,8 @@
             border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
             // background-color: transparent;
             & > button{
+                padding-block: 0.6em;
+                padding-inline-end: 0.6em;
                 background-color: transparent;
                 width: 100%;
                 font-weight: 700;
@@ -29,7 +31,7 @@
                 text-align: left;
                 border-radius: 3px;
                 transition: 0.2s;
-
+                // margin: 0;
                 
                 &:hover{
                     background-color: rgba(9, 30, 66, 0.08);
@@ -70,7 +72,7 @@
             margin-right: 2%;
             margin-bottom: 2%;
             width: 22.65%;
-            min-width: 175px;
+            // min-width: 175px;
             border-radius: 3px;
             &:hover{
                 background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -106,6 +108,20 @@
             }
     
     
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .gallery-sidebar{
+        display: none;
+    }
+    .gallery-list{ 
+        padding-inline:16px;
+    
+        & .gallery-item{
+            width: em(264px);
         }
     }
 }
