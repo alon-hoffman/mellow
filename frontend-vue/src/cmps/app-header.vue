@@ -31,13 +31,13 @@
       </router-link>
     </nav>
   </header>
-  <header v-if="params === '/boardsPage'||params.includes('boardsDetails')" class="boards-page">
+  <header v-if="params === '/board'||params.includes('boardsDetails')" class="boards-page">
     <nav>
       <div class="left-header">
         <router-link to="/">
          <img class="logo-img-board" src="../assets/icons/mellow-white.png" alt="">
         </router-link>
-        <router-link to="/boardsPage">
+        <router-link to="/board">
           <button class="boards-header-btn">Boards</button>
         </router-link>
         <button class="create-board-btn" @click="toggleCreateModal">Create </button>

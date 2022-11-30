@@ -16,12 +16,12 @@ const routes = [
   },
   {
     // path: '/boards',
-    path: '/boardsDetails/:id',
+    path: '/board/:id',
     name: 'board-details',
     component: boardDetails
   },
   {
-    path: '/boardsPage',
+    path: '/board',
     name: 'boards-page',
     component: boardsPage
   },

@@ -6,12 +6,14 @@
       </h3>
       <ul class="gallery flex wrap">
         <li class="gallery-item">
-          <div class="board-preview">
-            Traco
-            <div class="board-preview-options">
-              <img class="icon" src="../assets/icons/star_regular.svg" alt="star-regular">
+            <router-link :to="'/board/' + 'taco'">
+            <div class="board-preview">
+              Traco
+              <div class="board-preview-options">
+                <img class="icon" src="../assets/icons/star_regular.svg" alt="star-regular">
+              </div>
             </div>
-          </div>
+          </router-link>
         </li>
         <li class="gallery-item">
           <div class="board-preview">
