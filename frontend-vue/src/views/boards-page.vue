@@ -1,5 +1,5 @@
 <template>
-    <main class="gallery-container flex justify-center full">
+    <main class="gallery-container flex full">
       <article class="gallery flex">
       <aside class="gallery-sidebar">
         <nav class="flex column">
@@ -20,7 +20,7 @@
         </div>
       </aside>
       
-      <section>
+      <section class="full">
       <h3 class="gallery-header">
           <img src="../assets/icons/time.png" alt="">
         Recently viewed

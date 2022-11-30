@@ -10,8 +10,17 @@ export const store = Vuex.createStore({
     carStore,
   },
   state: {
+    isScreen: false,
+  },
+  getters: {
+    isScreen(state) {
+      return state.isScreen
+    }
   },
   mutations: {
+    toggleScreen({ isScreen }) {
+      isScreen = !isScreen
+    },
   },
   actions: {
   }
