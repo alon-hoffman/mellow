@@ -8,6 +8,7 @@
             <p>Keep everything in the same place—even if your team isn't.</p>
           </div>
         </div>
+        <button class="guest-button">Enter as a guest</button>
       </div>
     </div>
 

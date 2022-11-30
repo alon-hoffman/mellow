@@ -30,12 +30,22 @@
         scroll-margin-top: 72px;
         text-align: center;
         width: 100%;
-         h1{
-            font-size: 32px;
+
+        h1 {
+            font-size: 44px;
         }
-         p{
+
+        p {
             margin-bottom: 1.5rem;
             font-size: 20px;
         }
+
+        .guest-button {
+            &button {
+                color: #000;
+                background-color: rgb(0, 101, 255);
+            }
+        }
     }
+
 }
