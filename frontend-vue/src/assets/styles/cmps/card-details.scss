@@ -1,0 +1,13 @@
+.modal-screen{
+    transition: 0.4s;
+    opacity: 0;
+    position: fixed;
+    inset: 0;
+    background-color:#142d4cb4;
+    pointer-events: none;
+
+    &.on{
+        opacity: 1;
+        pointer-events: all;
+    }
+}

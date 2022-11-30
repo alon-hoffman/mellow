@@ -1,7 +1,7 @@
 <template>
   <section class="group-list">
     <ul class="clean-list">
-    <card-group v-for="list in 6"/>
+    <card-group v-for="list in 6" @cardEdit="$emit('cardEdit', $event)"/>
   </ul>
   </section>
 </template>

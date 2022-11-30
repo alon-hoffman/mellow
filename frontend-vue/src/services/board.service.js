@@ -220,7 +220,6 @@ const startingBoards = [
             }
         ],
 
-        "cmpsOrder": ["status-picker", "member-picker", "date-picker"]
     }
 ]
 

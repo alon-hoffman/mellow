@@ -1,7 +1,7 @@
 <template>
   <section class="board-details">
     <!-- <sidebar/> -->
-
+    <card-details :isScreen="isScreen" />
     <div class="board-header">
       <div class="board-header-left">
         <h1 class="editable">Traco</h1>
@@ -19,7 +19,7 @@
           </svg></button>
       </div>
     </div>
-    <group-list />
+    <group-list @cardEdit="toggleEdit" />
   </section>
 
 </template>
@@ -27,29 +27,30 @@
 <script>
 import sidebar from "../cmps/sidebar.vue"
 import groupList from "../cmps/group-list.vue"
-
+import cardDetails from "../cmps/card-edit.vue"
 //icons
 
 
 export default {
-  data() {
-    return {
-
-    }
-  },
   components: {
     sidebar,
-    groupList
+    groupList,
+    cardDetails,
   },
 
   computed: {
-
+    isScreen(){
+      return this.$store.getters.isScreen
+    }
   },
   created() {
 
   },
   methods: {
-
+    toggleEdit(cardId){
+      console.log(cardId)
+      // this.$store.commit({type: 'toggleScreen'})
+    }
   }
 
 
