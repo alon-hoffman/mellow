@@ -73,17 +73,17 @@ const startingBoards = [
                 "cards": [
                     {
                         "id": "c103",
-                        "title": "ToDo",
-                        labels: [
-                            "important", "urgent"
-                        ]
+                        "title": "Research for prime locations and peak hours",
+                        labels: ["important", "urgent"]
                     },
                     {
                         "id": "c104",
-                        "title": "Research for prime locations and peak hours",
+                        "title": "Buy taco truck",
                         "priority": "high",
-                        "description": "description",
-                        "createdBy": "",
+                        "createdBy": {
+                            "_id": "u102",
+                            "fullname": "Itai Morag",
+                        },
                         "checklists": [
                             {
                                 "id": "YEhmF",
@@ -91,28 +91,117 @@ const startingBoards = [
                                 "todos": [
                                     {
                                         "id": "212jX",
-                                        "title": "To Do 1",
+                                        "title": "Look up best truck",
                                         "isDone": false
+                                    },
+                                    {
+                                        "id": "5jX",
+                                        "title": "find cheap equipment",
+                                        "isDone": true
                                     }
                                 ]
                             }
                         ],
-                        "memberIds": ["u101"],
-                        "labelIds": ["l101", "l102"],
+                        "memberIds": [{
+                            "_id": "u102",
+                            "fullname": "Itai Morag",
+                        }],
+                        labels: ["important", "urgent"],
                         "dueDate": 16156215211,
-                        "byMember": {
-                            "_id": "u101",
-                            "username": "Tal",
-                            "fullname": "Tal Tarablus",
-                            "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                        },
-                        "style": {
-                            "bgColor": "#26de81"
-                        }
                     }
                 ],
-                "style": {}
-            }
+
+            },
+            {
+                "id": "g123",
+                "title": "Doing",
+                "archivedAt": 1589983468418,
+                "cards": [
+                    {
+                        "id": "c1534",
+                        "title": "Look for taco truck",
+                        imgURL: "https://trello.com/1/cards/63860ca5644759011faa16a2/attachments/63860d602444d1006e32080a/previews/63860d612444d1006e320814/download/IMG_5708__1_.jpg",
+                        labels: ["important"],
+                        members: [
+                            {
+                                "_id": "u101",
+                                "fullname": "Alon Hoffman",
+                            },
+                            {
+                                "_id": "u102",
+                                "fullname": "Itai Morag",
+                            },
+                        ]
+
+
+                    },
+                ]
+            },
+            {
+                "id": "g1asd",
+                "title": "Blocked",
+                "archivedAt": 1589983468418,
+                "cards": [
+                    {
+                        "id": "c15skdj",
+                        "title": "Pass Safety Inspection",
+                        createdBy: {
+                            "_id": "u102",
+                            "fullname": "Itai Morag",
+                        }
+                    },
+                    {
+                        "id": "askjdkj",
+                        "title": "Convince mom to cook in the truck",
+                        imgURL: "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x720/de20062beee58da62ee47ad12f309837/photo-1442458370899-ae20e367c5d8.jpg",
+                        createdBy: {
+                            "_id": "u102",
+                            "fullname": "Itai Morag",
+                        }
+                    },
+                ]
+            },
+            {
+                "id": "bjkhlk44",
+                "title": "QA",
+                "archivedAt": 1589984468418,
+                "cards": [
+                    {
+                        "id": "jvlvhlv",
+                        "title": "Stress test employees",
+                        imgURL: "https://trello-backgrounds.s3.amazonaws.com/Shared…eba801f64257/photo-1604208485423-f19bc2aaae2d.jpg",
+                        createdBy: {
+                            "_id": "u102",
+                            "fullname": "Itai Morag",
+                        }
+                    },
+                    {
+                        "id": "nalksjdl",
+                        "title": "Check spiciness",
+                        createdBy: {
+                            "_id": "u102",
+                            "fullname": "Itai Morag",
+                        }
+                    },
+                ]
+            },
+            {
+                "id": "ssvx3",
+                "title": "Done",
+                "archivedAt": 1589984468418,
+                "cards": [
+                    {
+                        "id": "79ucjxzi",
+                        "title": "Learn taco recipe",
+                        imgURL: "https://trello.com/1/cards/63860b4384db8b03aaa58f70/attachments/6386149eb4143f0070807dc6/previews/6386149eb4143f0070807ddf/download/AU-T-10001064-Taco-Recipe_ver_2.jpg",
+                        createdBy: {
+                            "_id": "u102",
+                            "fullname": "Itai Morag",
+                        },
+                        labels: ["important"],
+                    },
+                ]
+            },
         ],
         "activities": [
             {
