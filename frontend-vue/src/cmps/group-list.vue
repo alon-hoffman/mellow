@@ -1,8 +1,9 @@
 <template>
+  <h1>hi</h1>
   <section v-if="lists" class="group-list">
     <ul class="clean-list">
       <pre>{{lists}}</pre>
-    <card-group v-for="list in 6" @cardEdit="$emit('cardEdit', $event)"/>
+    <card-group v-for="list in lists" :key="list.id" @cardEdit="$emit('cardEdit', $event)"/>
   </ul>
   </section>
 </template>
@@ -12,10 +13,10 @@ import cardGroup from "../cmps/card-group.vue";
 export default {
   props:{
     lists:Array,
-    required:true,
   },
   data() {
     return {
+      
     };
   },
   components: {

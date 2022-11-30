@@ -21,7 +21,7 @@
         </button>
       </div>
     </div>
-    <group-list @cardEdit="toggleEdit" v-if="lists" :getLists="lists"/>
+    <group-list @cardEdit="toggleEdit" v-if="lists" :lists="lists"/>
   </section>
 </template>
 
@@ -53,8 +53,11 @@ return this.lists
   },
   async created() {
     await this.$store.dispatch({ type: "loadBoards" });
-    this.board = this.$store.getters.boards[0];
-    this.lists = this.board.groups
+    if(this.$store.getters.boards.length>0){
+      this.board = this.$store.getters.boards[0];
+      this.lists = this.board.groups
+      console.log(`this.lists = `, this.lists)
+    }
     
   },
   methods: {
