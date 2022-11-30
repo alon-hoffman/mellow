@@ -1,5 +1,4 @@
-header {
-}
+
 .home-page-header{
     background-color: rgb(255, 255, 255);
     cursor: default;
@@ -35,32 +34,11 @@ header {
     }
 }
 
-    // background-color: $clr2;
+.boards-page{
+    .logo-img-board{
+        width: rem(109px);
+    }
+}
 
-    // .loggedin-user {
-    //     background-color: $clr1;
-    //     padding: 2px 8px;
-    //     border-radius: 1em;
-    //     align-self: flex-end;
-    //     color: whitesmoke;
-    //     span{
-    //         background-color: $clr2;
-    //         padding: 4px;
-    //         margin: 10px;
-    //         border-radius: 50%;
-    //     }
-    // }
-    // nav {
-    //     // background-color: $clr4;
-    //     padding: 5px 0;
-    // }
-    // nav a:not(:first-child) {
-    //     border-top: 1px solid $clr1;
-    //     padding: 0 5px;
-    //     margin: 10px;
-    // }
-    // nav .active {
-    //     color: $clr1;
-    // }
     
 
