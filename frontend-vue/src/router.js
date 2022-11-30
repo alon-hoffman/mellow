@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import homePage from './views/home-page.vue'
 import carApp from './views/car-app.vue'
 import boardsPage from './views/boards-page.vue'
-import boardApp from './views/board-details.vue'
+import boardDetails from './views/board-details.vue'
 import reviewApp from './views/review-app.vue'
 import loginSignup from './views/login-signup.vue'
 import userDetails from './views/user-details.vue'
@@ -16,9 +16,9 @@ const routes = [
   },
   {
     // path: '/boards',
-    path: '/boards/:id',
+    path: '/boardsDetails/:id',
     name: 'board-details',
-    component: boardApp
+    component: boardDetails
   },
   {
     path: '/boardsPage',

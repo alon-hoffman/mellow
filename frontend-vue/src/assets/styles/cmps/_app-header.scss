@@ -1,5 +1,4 @@
-
-.home-page-header{
+.home-page-header {
     background-color: rgb(255, 255, 255);
     cursor: default;
     position: fixed;
@@ -9,13 +8,17 @@
     z-index: 100;
     background-color: #fff;
     padding: 10px;
-    .logo-img-home{
-        width: rem(109px);
+
+    .logo-img-home {
+        width: rem(120px);
+        // height: 50px;
     }
-    .home-logo-page{
+
+    .home-logo-page {
         display: contents;
     }
-    .login-button{
+
+    .login-button {
         -webkit-box-align: center;
         align-items: center;
         align-self: stretch;
@@ -25,53 +28,65 @@
         height: 100%;
         padding: 0.5rem 1.5rem;
         text-decoration: none;
-    
+
     }
-    nav{
+
+    nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 }
 
-.boards-page{
-    .logo-img-board{
-        width: rem(109px);
+.boards-page {
+    .logo-img-board {
+        width: rem(90px);
+        
     }
-    nav{
+
+    nav {
         padding: 4px 6px;
         height: 44px;
-        background-color:#026AA7 ;
+        background-color: #026AA7;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .create-board-btn{
-        background-color:#013857 ;
+
+    .create-board-btn {
+        background-color: #013857;
         border-radius: 3px;
-        &:hover{
-            background-color:#038cdb ;
+
+        &:hover {
+            background-color: #038cdb;
         }
     }
-    .boards-header-btn{
-        background-color:#026AA7 ;
+
+    .boards-header-btn {
+        background-color: #026AA7;
         border-radius: 3px;
-        &:hover{
-            background-color:#025281 ;
+
+        &:hover {
+            background-color: #025281;
         }
     }
-    .search-boards{
-        background-color:#0483cdc1 ;
+
+    .search-boards {
+        background-color: #0483cdc1;
         border: none;
         border-radius: 4px;
         // opacity: 1;
         height: 32px;
-        &::placeholder{
-            
+
+        &::placeholder {
+
             color: #fff;
         }
     }
+
+    .left-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
-
-    
-
