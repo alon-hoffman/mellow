@@ -11,10 +11,13 @@ background-size: cover;
     align-items: center;
     height: em(48px);
 
-
     >*{
         display: flex;
     align-items: center;
+
+    h1{
+        font-size: rem(18px)
+    }
 
     }
 
