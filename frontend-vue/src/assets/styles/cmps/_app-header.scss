@@ -40,8 +40,9 @@
 
 .boards-page {
     .logo-img-board {
-        width: rem(90px); 
+        width: rem(90px);
     }
+
     .home-logo-page {
         display: contents;
     }
@@ -59,6 +60,7 @@
         background-color: #013857;
         border-radius: 3px;
         cursor: pointer;
+
         &:hover {
             background-color: #038cdb;
         }
@@ -68,6 +70,7 @@
         background-color: #026AA7;
         border-radius: 3px;
         cursor: pointer;
+
         &:hover {
             background-color: #025281;
         }
@@ -85,17 +88,38 @@
             color: #fff;
         }
     }
+
     .left-header {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .right-header{
-        .user-img-header{
-            background-color: brown;
-        }
-        .bell-img-header{
+
+    .right-header {
+        display: flex;
+        button {
             background-color: transparent;
+            color: #fff;
+            border-radius: 3px;
+            padding: 2px 5px;
+            margin: 2px;
+
+            &:hover {
+                background-color: #55a1cd;
+            }
+        }
+
+        .user-img-header {
+            width: rem(20px);
+        }
+
+        .bell-img-header {
+            width: rem(20px);
+        }
+
+        .circle-img-header {
+            width: rem(20px);
+
         }
     }
 }

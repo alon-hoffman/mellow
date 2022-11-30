@@ -25,8 +25,9 @@
       </div>
       <div class="right-header">
         <input class="search-boards" type="text" placeholder="Search">
-        <button><img class="user-img-header" src="../assets/icons/user-solid.svg" alt=""></button>
-        <button><img class="bell-img-header" src="../assets/icons/bell-regular.svg" alt=""></button>
+        <button><img class="bell-img-header" src="../assets/icons/bell-regular.png" alt=""></button>
+        <button><img class="circle-img-header" src="../assets/icons/circle-question-regular.png" alt=""></button>
+        <button><img class="user-img-header" src="../assets/icons/user-solid.png" alt=""></button>
       </div>
     </nav>
     <section class="create-modal">
