@@ -12,7 +12,7 @@
       </router-link>
     </nav>
   </header>
-  <header v-if="params === '/board'||params.includes('boardsDetails')" class="boards-page">
+  <header v-if="params.includes('board')" class="boards-page">
     <nav>
       <div class="left-header">
         <router-link to="/" class="home-logo-page">
@@ -25,6 +25,8 @@
       </div>
       <div class="right-header">
         <input class="search-boards" type="text" placeholder="Search">
+        <button><img class="user-img-header" src="../assets/icons/user-solid.svg" alt=""></button>
+        <button><img class="bell-img-header" src="../assets/icons/bell-regular.svg" alt=""></button>
       </div>
     </nav>
     <section class="create-modal">

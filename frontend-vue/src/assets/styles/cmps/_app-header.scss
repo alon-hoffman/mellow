@@ -85,10 +85,17 @@
             color: #fff;
         }
     }
-
     .left-header {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .right-header{
+        .user-img-header{
+            background-color: brown;
+        }
+        .bell-img-header{
+            background-color: transparent;
+        }
     }
 }
