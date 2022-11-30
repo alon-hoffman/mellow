@@ -24,7 +24,7 @@
         <button class="create-board-btn" @click="toggleCreateModal">Create </button>
       </div>
       <div class="right-header">
-        <input class="search-boards" type="text" placeholder="Search">
+        <input class="search-boards" type="text" placeholder="   &#xF002;  Search" style="font-family:Arial, FontAwesome">
         <button><img class="bell-img-header" src="../assets/icons/bell-regular.png" alt=""></button>
         <button><img class="circle-img-header" src="../assets/icons/circle-question-regular.png" alt=""></button>
         <button><img class="user-img-header" src="../assets/icons/user-solid.png" alt=""></button>
