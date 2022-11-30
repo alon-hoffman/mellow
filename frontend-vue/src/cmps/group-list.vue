@@ -1,6 +1,5 @@
 <template>
   <section class="group-list">
-    <h1>group-list</h1>
     <ul class="clean-list">
     <card-group v-for="list in 6"/>
   </ul>
