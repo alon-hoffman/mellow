@@ -56,7 +56,6 @@ return this.lists
     if(this.$store.getters.boards.length>0){
       this.board = this.$store.getters.boards[0];
       this.lists = this.board.groups
-      console.log(`this.lists = `, this.lists)
     }
     
   },
