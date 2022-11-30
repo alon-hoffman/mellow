@@ -1,3 +1,7 @@
+.card-group-wrapper{
+// height: 100%
+}
+
 .card-group{
     max-width: rem(272px);
     min-width: rem(272px);
@@ -7,7 +11,8 @@
     border-radius: 3px;
 
     .group-title{
-        background-color: black;
-        color:red;
+        background-color: unset;
+        border: none;
+        margin-inline-start: rem(10px);
     }
 }
