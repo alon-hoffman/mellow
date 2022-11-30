@@ -12,7 +12,7 @@
       </router-link>
     </nav>
   </header>
-  <header v-if="params.includes('board')" class="boards-page">
+  <header v-click-slash="focusInput" v-if="params.includes('board')" class="boards-page">
     <nav>
       <div class="left-header">
         <router-link to="/" class="home-logo-page">
@@ -24,7 +24,7 @@
         <button class="create-board-btn" @click="toggleCreateModal">Create </button>
       </div>
       <div class="right-header">
-        <input class="search-boards" type="text" placeholder="   &#xF002;  Search" style="font-family:Arial, FontAwesome">
+        <input ref="search" class="search-boards" type="text" placeholder="   &#xF002;  Search" style="font-family:Arial, FontAwesome">
         <button><img class="bell-img-header" src="../assets/icons/bell-regular.png" alt=""></button>
         <button><img class="circle-img-header" src="../assets/icons/circle-question-regular.png" alt=""></button>
         <button><img class="user-img-header" src="../assets/icons/user-solid.png" alt=""></button>
@@ -48,6 +48,9 @@ export default {
   methods: {
     toggleCreateModal() {
       this.isCreateModalOpen = !this.isCreateModalOpen
+    },
+    focusInput(){
+      this.$refs.search.focus()
     },
   },
   computed: {
