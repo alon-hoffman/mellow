@@ -1,6 +1,6 @@
 <template>
-    <section class="group">
-<h1>group</h1>
+    <section class="card-group">
+<h1>card-group</h1>
     </section>
     
   </template>
