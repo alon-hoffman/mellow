@@ -1,19 +1,30 @@
 <template>
-    <main class="boards-page flex">
+    <main class="gallery flex">
       <aside class="gallery-sidebar">
         <nav class="flex column">
-          <button class="gallery-nav-btn">Boards</button>
-          <button class="gallery-nav-btn">Templates</button>
-          <button class="gallery-nav-btn">Home</button>
+          <button class="gallery-nav-btn flex">
+              <img src="../assets/icons/trello.svg" alt="">
+              Boards
+            </button>
+          <button class="gallery-nav-btn flex">
+            <img src="../assets/icons/trello.svg" alt="">
+            Templates</button>
+          <button class="gallery-nav-btn">
+            <img src="../assets/icons/home.svg" alt="hm">
+            Home</button>
         </nav>
+        <div class="flex">
+          Workspace
+          <img src="../assets/icons/add.svg" alt="">
+        </div>
       </aside>
+      
       <section>
-
       <h3 class="gallery-header">
           <img src="../assets/icons/time.png" alt="">
         Recently viewed
       </h3>
-      <ul class="gallery flex wrap">
+      <ul class="gallery-list flex wrap">
         <li class="gallery-item">
             <router-link :to="'/board/' + 'taco'">
             <div class="board-preview">
