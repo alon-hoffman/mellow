@@ -1,5 +1,14 @@
 <template>
-    <section class="container boards-page">
+    <main class="boards-page flex">
+      <aside class="gallery-sidebar">
+        <nav class="flex column">
+          <button class="gallery-nav-btn">Boards</button>
+          <button class="gallery-nav-btn">Templates</button>
+          <button class="gallery-nav-btn">Home</button>
+        </nav>
+      </aside>
+      <section>
+
       <h3 class="gallery-header">
           <img src="../assets/icons/time.png" alt="">
         Recently viewed
@@ -56,8 +65,10 @@
           Dummy board
         </li> -->
       </ul>
-
     </section>
+
+
+    </main>
   
     
   </template>
