@@ -50,11 +50,15 @@
         scroll-margin-top: 72px;
         text-align: center;
         width: 100%;
+.h1-container{
+    width: rem(727px);
+    margin: 0 auto;
 
+}
         h1 {
-            font-size: 44px;
-            width: rem(727px);
+            font-size: 48px;
             text-align: center;
+            line-height: 1.25;
         }
 
         p {
