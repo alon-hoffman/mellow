@@ -13,43 +13,40 @@
   </header>
   <header v-if="hello === '/boardsPage'" class="boards-page">
     <nav>
-      <router-link to="/">
-        <img class="logo-img-board"
+      <div class="left-header">
+        <router-link to="/">
+          <img class="logo-img-board"
           src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/167dc7b9900a5b241b15ba21f8037cf8/trello-logo-blue.svg"
           alt="">
-      </router-link>
-      <router-link to="/boards">Board app</router-link>
-      <router-link to="/boardsPage">Mellow</router-link>
-      <router-link to="/">home</router-link>
-      <router-link to="/login">Login / Signup</router-link>
+        </router-link>
+        <router-link to="/boards">
+          <button class="boards-header-btn">Boards</button>
+        </router-link>
+        <button class="create-board-btn" @click="toggleCreateModal">Create </button>
+      </div>
+      <div class="right-header">
+        <input class="search-boards" type="text" placeholder="Search">
+      </div>
     </nav>
-  </header>
-  <header v-if="hello === '/boards'" class="board-gallery">
-    <nav>
-      <router-link to="/">
-        <img class="logo-img-home"
-          src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/167dc7b9900a5b241b15ba21f8037cf8/trello-logo-blue.svg"
-          alt="">
-      </router-link>
+    <section class="create-modal">
 
-
-      <router-link to="/boards">Board app</router-link>
-
-
-      <router-link to="/boardsPage">Mellow</router-link>
-      <router-link to="/">home</router-link>
-      <router-link to="/login">Login / Signup</router-link>
-    </nav>
+    </section>
   </header>
 </template>
 <script>
 export default {
   data() {
     return {
-      route: this.$route
+      route: this.$route,
+      isCreateModalOpen:false,
     }
   },
   created() {
+  },
+  methods:{
+    toggleCreateModal(){
+      this.isCreateModalOpen=!this.isCreateModalOpen
+    },
   },
   computed: {
     loggedInUser() {

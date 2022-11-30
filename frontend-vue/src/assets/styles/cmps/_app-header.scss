@@ -38,6 +38,39 @@
     .logo-img-board{
         width: rem(109px);
     }
+    nav{
+        padding: 4px 6px;
+        height: 44px;
+        background-color:#026AA7 ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .create-board-btn{
+        background-color:#013857 ;
+        border-radius: 3px;
+        &:hover{
+            background-color:#038cdb ;
+        }
+    }
+    .boards-header-btn{
+        background-color:#026AA7 ;
+        border-radius: 3px;
+        &:hover{
+            background-color:#025281 ;
+        }
+    }
+    .search-boards{
+        background-color:#0483cdc1 ;
+        border: none;
+        border-radius: 4px;
+        // opacity: 1;
+        height: 32px;
+        &::placeholder{
+            
+            color: #fff;
+        }
+    }
 }
 
     
