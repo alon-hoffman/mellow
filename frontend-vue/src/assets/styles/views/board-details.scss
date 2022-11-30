@@ -6,6 +6,7 @@
 
 .board-header {
     color: white;
+    margin-left: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +17,9 @@
         align-items: center;
 
         h1 {
-            font-size: rem(18px)
+            margin: 0;
+            font-size: rem(18px);
+            
         }
 
     }
@@ -24,11 +27,20 @@
     .board-header-right {
         button {
             background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            
         }
     }
     .board-header-left{
+        gap: 10px;
+        
         button {
+            border-radius: 3px;
             background-color: rgba(255, 255, 255, 0.2);
+        }
+        .star-img-board{
+            
+            width: 16px;
         }
     }
     
