@@ -1,5 +1,5 @@
 <template>
-    <section class="board-app">
+    <section class="board-details">
       <!-- <sidebar/> -->
      
       <div class="board-header">
