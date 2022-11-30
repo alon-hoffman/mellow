@@ -1,5 +1,6 @@
 <template>
     <section class="card-group">
+      <input class="group-title" type="text" v-model="title" />
 <card-preview v-for="card in 4"/>
     </section>
     
@@ -10,9 +11,9 @@
   export default {
     data() {
       return {
-       
+       title:"ToDo"
       }
-    },
+    },  
     components:{
       cardPreview
     },

@@ -1,7 +1,13 @@
 .card-group{
-    width: em(270px);
+    max-width: rem(272px);
+    min-width: rem(272px);
     min-height:em(80px);
     color: $clr4;
     background-color: $clr2;
     border-radius: 3px;
+
+    .group-title{
+        background-color: black;
+        color:red;
+    }
 }

@@ -1,7 +1,13 @@
 .card-preview{
     min-height: em(32px);
     background-color: $clr1;
-    margin: em(10px);
+    margin: rem(10px);
     border-radius: 3px;
-    
+    border-bottom:1px solid $clr3 ;
+    padding: rem(10px);
+    h1{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
 }
