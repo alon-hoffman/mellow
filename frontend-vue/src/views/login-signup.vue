@@ -1,119 +1,65 @@
-<template>
-  <div class="container about">
-    <p>{{ msg }}</p>
 
-    <div v-if="loggedinUser">
-      <h3>
-        Loggedin User:
-        {{ loggedinUser.username }}
-        <button @click="doLogout">Logout</button>
-      </h3>
-    </div>
-    <div v-else>
+<template>
+  <section class="login-signup">
+    <img class="logo-login-page" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/167dc7b9900a5b241b15ba21f8037cf8/trello-logo-blue.svg" alt="">
+    <section v-if="!showLogin" class="login-section">
       <h2>Login</h2>
-      <form @submit.prevent="doLogin">
-        <select v-model="loginCred.username">
-          <option value="">Select User</option>
-          <option v-for="user in users" :key="user._id" :value="user.username">{{user.fullname}}</option>
-        </select>
-        <!-- <input type="text" v-model="loginCred.username" placeholder="User name" />
-        <input
-          type="text"
-          v-model="loginCred.password"
-          placeholder="Password"
-        /> -->
-        <button>Login</button>
-      </form>
-      <p class="mute">user1 or admin, pass:123 </p>
-      <form @submit.prevent="doSignup">
-        <h2>Signup</h2>
-        <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
-        <input
-          type="text"
-          v-model="signupCred.password"
-          placeholder="Password"
-        />
-        <input
-          type="text"
-          v-model="signupCred.username"
-          placeholder="Username"
-        />
-        <button>Signup</button>
-      </form>
-    </div>
-    <hr />
-    <details>
-      <summary>
-        Admin Section
-      </summary>
-      <ul>
-        <li v-for="user in users" :key="user._id">
-          <pre>{{ user }}</pre>
-          <button @click="removeUser(user._id)">x</button>
-        </li>
-      </ul>
-    </details>
-  </div>
+      <button class="change-login-btn" @click="changeShowLogin">Click to change to Login/Signup </button>
+          <form class="login-signup-form" @submit.prevent="login">
+              <input ref="username" type="text" v-model="credentials.username" placeholder="Username" />
+              <input type="password" v-model="credentials.password" placeholder="Password" />
+              <button class="login-signup-btn">Login</button>
+          </form>
+      </section>
+      <section v-else class="signup-section">
+          <h2>Signup</h2>
+          <button class="change-login-btn" @click="changeShowLogin">Click to change to Login/Signup </button>
+          <form class="login-signup-form" @submit.prevent="signup">
+              <input type="text" v-model="signupInfo.fullName" placeholder="Full name" />
+              <input type="text" v-model="signupInfo.username" placeholder="Username" />
+              <input type="password" v-model="signupInfo.password" placeholder="Password" />
+              <button class="login-signup-btn">Signup</button>
+            </form>
+          </section>
+  </section>
 </template>
 
+
 <script>
+import { userService } from '../services/user.service.js'
 export default {
   name: 'login-signup',
   data() {
-    return {
-      msg: '',
-      loginCred: {username: 'user1', password: '123'},
-      signupCred: {username: '', password: '', fullname: ''},
-    }
-  },
-  computed: {
-    users() {
-      return this.$store.getters.users
-    },
-    loggedinUser() {
-      return this.$store.getters.loggedinUser
-    },
-  },
-  created() {
-    this.loadUsers()
+      return {
+          showLogin: false,
+          credentials: {
+              username: '',
+              password: ''
+          },
+          signupInfo: {
+              fullName: '',
+              username: '',
+              password: ''
+          }
+      }
   },
   methods: {
-    async doLogin() {
-      if (!this.loginCred.username) {
-        this.msg = 'Please enter username/password'
-        return
-      }
-      try {
-        await this.$store.dispatch({ type: "login", userCred: this.loginCred })
-        this.$router.push('/')
-      } catch(err) {
-          console.log(err)
-          this.msg = 'Failed to login'
-      }
-    },
-    doLogout() {
-      this.$store.dispatch({ type: 'logout' })
-    },
-    async doSignup() {
-      if (!this.signupCred.fullname || !this.signupCred.password || !this.signupCred.username) {
-        this.msg = 'Please fill up the form'
-        return
-      }
-      await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
-      this.$router.push('/')
-      
-    },
-    loadUsers() {
-      this.$store.dispatch({ type: "loadUsers" })
-    },
-    async removeUser(userId) {
-      try {
-        await this.$store.dispatch({ type: "removeUser", userId })
-        this.msg = 'User removed'
-      } catch(err) {
-        this.msg = 'Failed to remove user'
-      }
-    }
-  }
+      async login() {
+   await this.$store.dispatch({type: 'login', cred: this.credentials});
+   this.$router.push('/boardsPage')
+  },
+      changeShowLogin() {
+          this.showLogin = !this.showLogin
+      },
+      async signup() {
+   await this.$store.dispatch({type: 'signup', cred: this.signupInfo});
+   this.$router.push('/boardsPage')
+  },
+  },
+  mounted() {
+  this.$refs.username.focus()
+}
+
 }
 </script>
+

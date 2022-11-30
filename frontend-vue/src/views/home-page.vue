@@ -4,7 +4,9 @@
       <div class="oFuOf">
         <div class="iPePOS">
           <div>
-            <h1> Trello brings all your tasks, teammates, and tools together</h1>
+            <div class="h1-container">
+              <h1> Trello brings all your tasks, teammates, and tools together</h1>
+            </div>
             <p>Keep everything in the same place—even if your team isn't.</p>
           </div>
         </div>
