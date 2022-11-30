@@ -1,9 +1,9 @@
 <template>
             <div class="modal-screen" :class="isOn" @click="$emit('toggleEdit')"></div>
-            <article class="edit-modal">
+            <article class="modal on" :class="isOn">
                 <header class="modal-header">
                     <img src="../assets/icons/dashboard.svg" alt="">
-                    <h1>Do whatever whatever whatever</h1>
+                    <input type="text" v-model="demoCard.title">
                     <p>in list <span>traco</span></p>
                 </header>
                 <section class="card-description">
@@ -30,8 +30,12 @@ export default{
     props:{
         isScreen : Boolean
     },
-    state() {
-        return{
+    data(){
+        return {
+            demoCard: {
+                title: 'Make logo',
+                content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            }
         }
     },
     methods:{
