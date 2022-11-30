@@ -8,9 +8,8 @@ import { store } from '../store/store'
 
 
 
-const startingBoards = [
+const startingBoard = [
     {
-        "_id": "b101",
         "title": "traco",
         "isStarred": false,
         "archivedAt": 1589983468418,
@@ -223,6 +222,8 @@ const startingBoards = [
     }
 ]
 
+
+
 const STORAGE_KEY = 'board'
 const boardChannel = new BroadcastChannel('boardChannel')
 
@@ -243,15 +244,14 @@ export const boardService = {
 window.cs = boardService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
+async function query(filterBy = { txt: '' }) {
     var boards = await storageService.query(STORAGE_KEY)
     if (filterBy.txt) {
         const regex = new RegExp(filterBy.txt, 'i')
         boards = boards.filter(board => regex.test(board.vendor) || regex.test(board.description))
     }
-    if (filterBy.price) {
-        boards = boards.filter(board => board.price <= filterBy.price)
-    }
+    //XXX for developing proposes
+    if (!boards || !boards.length) return startingBoard
     return boards
 
 }

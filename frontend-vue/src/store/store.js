@@ -18,8 +18,8 @@ export const store = Vuex.createStore({
     }
   },
   mutations: {
-    toggleScreen({ isScreen }) {
-      isScreen = !isScreen
+    toggleScreen(state) {
+      state.isScreen = !state.isScreen
     },
   },
   actions: {
