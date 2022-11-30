@@ -12,12 +12,77 @@
     width: 100%;
 }
 
-.recently-viewed{
-    color: #172b4d;
-    & img{
-        filter: invert(10%) sepia(26%) saturate(4768%) hue-rotate(204deg) brightness(90%) contrast(87%);
+// .gallery-header{
+// }
+
+.gallery{
+    list-style-type:none;
+    max-width: 1266px;
+    font-size: 16px;
+    &-header{
+        font-size: 17px;
+        margin-inline-start: 2.9em;
+        letter-spacing: 0.5px;
         vertical-align: bottom;
-        width: 1.5rem;
-        height: 1.5rem;
+        // margin: 0;
+        color: #172b4d;
+        & img{
+            position: relative;
+            top: 0.4em;
+            left: -0.4em;
+            filter: invert(10%) sepia(26%) saturate(4768%) hue-rotate(204deg) brightness(90%) contrast(87%);
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+    }
+
+    &-item{
+        position:relative;
+        cursor: pointer;
+        height: 6em;
+        padding: 8px;
+        background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2465x1600/560d0ec362004ae022ec06afdb2b06ef/photo-1599974579688-8dbdd335c77f.jpg");
+        background-size: cover;
+        // todo change width percent at different breakpoints
+        margin-right: 2%;
+        margin-bottom: 2%;
+        width: 22.65%;
+        min-width: 175px;
+        border-radius: 3px;
+        &:hover{
+            background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2465x1600/560d0ec362004ae022ec06afdb2b06ef/photo-1599974579688-8dbdd335c77f.jpg");
+            
+            & .board-preview-options{
+                transform: translateX(-150%);
+                opacity: 1;
+            }
+        }
+
+        & .board-preview{
+            color: #fff;
+            font-weight: 700;
+
+            &-options{
+                height: max-content;
+                position: absolute;
+                bottom: 0;
+                right: -10%;
+                opacity: 0;
+                transition: 0.1s;
+                & > .icon{
+                    // transform: scale(0.45);
+                    height: 1.125em;
+                    width: 1.125em;
+                    filter: invert(98%) sepia(2%) saturate(2%) hue-rotate(214deg) brightness(115%) contrast(100%);
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+
     }
 }
