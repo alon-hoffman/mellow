@@ -5,12 +5,12 @@
     }
 }
 
-.home-container .all-boards {
-    margin: 40px 16px 0;
-    max-width: 825px;
-    min-width: 288px;
-    width: 100%;
-}
+// .home-container .all-boards {
+//     margin: 40px 16px 0;
+//     max-width: 825px;
+//     min-width: 288px;
+//     width: 100%;
+// }
 
 // .gallery-header{
 // }
@@ -18,7 +18,26 @@
 .gallery{
     list-style-type:none;
     max-width: 1266px;
-    font-size: 16px;
+    font-size: 14px;
+
+    &-sidebar{
+        width: 272px;
+        padding-inline: 1.2em;
+
+        & > nav{
+            border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+            background-color: transparent;
+            & > button{
+                background-color: transparent;
+                width: 100%;
+                font-weight: 700;
+                color: rgb(23, 43, 77);
+                text-align: left;
+            }
+        } 
+        
+    }
+
     &-header{
         font-size: 17px;
         margin-inline-start: 2.9em;
