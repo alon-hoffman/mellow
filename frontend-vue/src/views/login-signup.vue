@@ -1,7 +1,9 @@
 
 <template>
   <section class="login-signup">
-    <img class="logo-login-page" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/167dc7b9900a5b241b15ba21f8037cf8/trello-logo-blue.svg" alt="">
+    <router-link to="/">
+      <img class="logo-login-page" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/167dc7b9900a5b241b15ba21f8037cf8/trello-logo-blue.svg" alt="">
+    </router-link>
     <section v-if="!showLogin" class="login-section">
       <h2>Login</h2>
       <button class="change-login-btn" @click="changeShowLogin">Click to change to Login/Signup </button>

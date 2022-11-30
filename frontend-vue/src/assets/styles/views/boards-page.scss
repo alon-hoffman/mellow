@@ -1,5 +1,8 @@
 .boards-page{
     background-color: #fbfbff;
+    &-header{
+        color: #172b4d;
+    }
 }
 
 .home-container .all-boards {
@@ -7,4 +10,14 @@
     max-width: 825px;
     min-width: 288px;
     width: 100%;
+}
+
+.recently-viewed{
+    color: #172b4d;
+    & img{
+        filter: invert(10%) sepia(26%) saturate(4768%) hue-rotate(204deg) brightness(90%) contrast(87%);
+        vertical-align: bottom;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 }
