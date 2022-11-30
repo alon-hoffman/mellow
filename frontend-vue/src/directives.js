@@ -45,6 +45,24 @@ const editable = {
       el.clickEsc = (el) => {
         if (el.keyCode === 27) {
           cb()
+        } else {  
+        }
+      }
+      setTimeout(() => {
+        document.addEventListener('keyup', el.clickEsc)
+      }, 0)
+    },
+    unmounted(el) {
+      document.removeEventListener('keyup', el.clickEsc)
+      
+    },
+  }
+
+  export const clickOnSlashDirective = {
+    mounted(el, { value: cb }) {
+      el.clickEsc = (el) => {
+        if (el.keyCode === 191) {
+          cb()
         } else {
         }
       }

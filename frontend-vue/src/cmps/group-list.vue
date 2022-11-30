@@ -2,7 +2,7 @@
   <section v-if="lists" class="group-list">
     <ul class="clean-list">
       <pre>{{lists}}</pre>
-    <card-group v-for="list in 6"/>
+    <card-group v-for="list in 6" @cardEdit="$emit('cardEdit', $event)"/>
   </ul>
   </section>
 </template>
