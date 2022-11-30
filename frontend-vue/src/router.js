@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import homePage from './views/home-page.vue'
-import carApp from './views/car-app.vue'
+// import carApp from './views/car-app.vue'
 import boardsPage from './views/boards-page.vue'
 import boardDetails from './views/board-details.vue'
 import reviewApp from './views/review-app.vue'
