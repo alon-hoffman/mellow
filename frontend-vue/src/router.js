@@ -15,8 +15,8 @@ const routes = [
     component: home
   },
   {
-    path: '/boards',
-    // path: '/boards/:id',
+    // path: '/boards',
+    path: '/boards/:id',
     name: 'board-app',
     component: boardApp
   },
@@ -25,11 +25,11 @@ const routes = [
     name: 'boards-page',
     component: boardsPage
   },
-  {
-    path: '/boardApp',
-    name: 'board-app',
-    component: boardApp
-  },
+  // {
+  //   path: '/boardApp',
+  //   name: 'board-app',
+  //   component: boardApp
+  // },
   {
     path: '/login',
     name: 'loginSignup',
