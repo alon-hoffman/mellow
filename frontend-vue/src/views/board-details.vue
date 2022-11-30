@@ -62,7 +62,7 @@ export default {
   computed: {
     isScreen(){
       return this.$store.getters.isScreen
-    }    getLists(){
+    },    getLists(){
 return this.lists
     },
   },
@@ -72,14 +72,11 @@ return this.lists
     this.lists = this.board.groups
     
   },
-  methods: {},
-};
   methods: {
     toggleEdit(cardId){
       this.$store.commit({type: 'toggleScreen'})
     }
   }
-
 
 }
 </script>
