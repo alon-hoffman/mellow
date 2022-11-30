@@ -9,7 +9,7 @@
       </div>
       <div class="board-header-right">
         <button class="filter-btn"><img class="filter-img-board" src="../assets/icons/filter.png" />Filter</button>
-        <div class="member-list"><span>AH</span><span>EH</span><span>IM</span></div>
+        <div class="member-list"><img src="" alt=""></div>
         <button class="add-user-btn"><img class="add-user-img" src="../assets/icons/add-user.png" /> share</button>
         <button class="transparent-btn"><svg width="24" height="24" role="presentation" focusable="false"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
