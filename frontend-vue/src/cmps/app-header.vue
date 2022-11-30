@@ -1,21 +1,15 @@
 <template>
-  <header>
+  <header v-if="hello==='/'" class="home-header">
     <nav>
       <router-link to="/">
-        <span role="img" aria-label="logo">🙏</span>
+        <img class="logo-img-home" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/167dc7b9900a5b241b15ba21f8037cf8/trello-logo-blue.svg" alt="">
       </router-link>
+     
       <router-link to="/boards">Board app</router-link>
       <router-link to="/boardsPage">Mellow</router-link>
       <router-link to="/">home</router-link>
       <router-link to="/login">Login / Signup</router-link>
     </nav>
-    {{hello}}
-    <section class="loggedin-user" v-if="loggedInUser">
-      <router-link :to="`/user/${loggedInUser._id}`">
-        {{ loggedInUser.fullname }}
-      </router-link>
-      <span>{{ loggedInUser.score.toLocaleString() }}</span>
-    </section>
   </header>
 </template>
 <script>
@@ -33,8 +27,8 @@ return {
       return this.$store.getters.loggedinUser
     },
     hello(){
-
       console.log(`this.$route = `, this.$route.path)
+return this.$route.path
     },
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="container home text-center">
+  <section class="home text-center">
     <div class="ctsbPE">
       <div class="oFuOf">
         <div class="iPePOS">
@@ -9,12 +9,11 @@
           </div>
         </div>
         <button class="guest-button">Enter as a guest</button>
+        <img class="trello-board-img" alt="Vue logo" src="https://images.ctfassets.net/rz1oowkt5gyp/5lDhjfcNTvIKeiBPtxRdQ7/67717ed94b8f6e7fb13a59c109933596/HeroBoard__CalendarView_4x.png?w=960&fm=webp">
       </div>
     </div>
 
 
-    <img alt="Vue logo"
-      src="https://images.ctfassets.net/rz1oowkt5gyp/5lDhjfcNTvIKeiBPtxRdQ7/67717ed94b8f6e7fb13a59c109933596/HeroBoard__CalendarView_4x.png?w=960&fm=webp">
   </section>
 
 
