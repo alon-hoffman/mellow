@@ -49,14 +49,14 @@ export default {
   methods: {
     async login() {
       await this.$store.dispatch({ type: 'login', cred: this.credentials });
-      this.$router.push('/boardsPage')
+      this.$router.push('/board')
     },
     changeShowLogin() {
       this.showLogin = !this.showLogin
     },
     async signup() {
       await this.$store.dispatch({ type: 'signup', cred: this.signupInfo });
-      this.$router.push('/boardsPage')
+      this.$router.push('/board')
     },
   },
   mounted() {
