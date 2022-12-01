@@ -18,20 +18,11 @@
           <img class="add-user-img" src="../assets/icons/add-user.png" /> share
         </button>
         <button class="more-btn">
-          <svg
-            width="24"
-            height="24"
-            role="presentation"
-            focusable="false"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+          <svg width="24" height="24" role="presentation" focusable="false" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
               d="M5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12C3 13.1046 3.89543 14 5 14ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14ZM21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z"
-              fill="currentColor"
-            ></path>
+              fill="currentColor"></path>
           </svg>
         </button>
       </div>
@@ -68,12 +59,13 @@ export default {
     },
   },
   async created() {
-    await this.$store.dispatch({ type: "loadBoards" });
-    if (this.$store.getters.boards.length > 0) {
-      this.board = JSON.parse(JSON.stringify(this.$store.getters.boards))[0];
-      // this.board = this.$store.getters.boards[0];
-      this.lists = this.board.groups;
-    }
+    if(!this.$store.getters.boards) await this.$store.dispatch({ type: "loadBoards" });
+    const { _id } = this.$route.params
+    await this.$store.commit({ type: "setBoardById"}, {_id });
+    const currBoard = this.$store.getters.getCurrBoard;
+    this.board = currBoard
+    this.lists = this.board?.groups;
+
   },
   methods: {
     toggleEdit(cardId) {
@@ -82,8 +74,8 @@ export default {
     },
     addList(title) {
       console.log("🚀 ~ file: board-details.vue:84 ~ addList ~ title", title)
-      this.board.groups.push({title});
-      this.$store.dispatch({ type: "updateBoard", board:this.board });
+      this.board.groups.push({ title });
+      this.$store.dispatch({ type: "updateBoard", board: this.board });
     },
   },
 };

@@ -87,14 +87,16 @@
   
   <script>
   export default {
-    name: 'home',
+    name: 'boards-page',
     data() {
       return {
+        boards:null,
       }
     },
     computed: {
     },
-    created() {
+   async created() {
+    this.boards=await this.$store.dispatch({ type: "loadBoards" });
     },
     methods: {
     }
