@@ -1,30 +1,36 @@
 <template>
             <div  class="modal-screen" :class="isOn" @click="$emit('toggleEdit')"></div>
             <article class="modal" :class="isOn">
-                <header class="modal-header">
-                    <img src="../assets/icons/dashboard.svg" alt="">
-                    <input type="text" v-model="demoCard.title">
-                    <p>in list <span class="move-card-link">traco</span></p>
+                <header class="modal-header edit-block">
+                    <img class="icon" src="../assets/icons/dashboard.svg" alt="">
+                    <input class="header" type="text" v-model="demoCard.title">
+                    <p class="content">in list <span class="move-card-link">traco</span></p>
                 </header>
-                <section class="card-description">
-                   
-                    <img src="../assets/icons/description.svg" alt="">
-                    <h3>Description</h3>
-                    <div class="fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div>
-                    <!-- <textarea name="" id="" cols="30" rows="3" placeholder="Add a more detailed description…"></textarea> -->
-                </section>
-                <section class="card-activity-bar flex justify-between">
-                    
-                        <img src="../assets/icons/activities.svg" alt="activities">
-                        <h3>Activity</h3>
-                    
-                    <button>Hide Details</button>
+                <!-- <aside class="modal-add-option">
+                        <
+                </aside> -->
+                <modal-sidebar />
+                <section class="main-container">
+                    <section class="card-description">
+                        <img src="../assets/icons/description.svg" alt="">
+                        <h3>Description</h3>
+                        <div class="fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div>
+                        <!-- <textarea name="" id="" cols="30" rows="3" placeholder="Add a more detailed description…"></textarea> -->
+                    </section>
+                    <section class="card-activity-bar flex justify-between">
+                        
+                            <img src="../assets/icons/activities.svg" alt="activities">
+                            <h3>Activity</h3>
+                        
+                        <button>Hide Details</button>
+                    </section>
                 </section>
             </article>
 
 </template>
 
 <script>
+import modalSidebar from './modal-sidebar.vue'
 export default{
     props:{
         isScreen : Boolean
@@ -46,6 +52,9 @@ export default{
     isOn() {
            return { on: this.isScreen === true }
        },
+   },
+   components: {
+    modalSidebar
    },
 }
 </script>
