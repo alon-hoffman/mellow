@@ -38,5 +38,12 @@ button{
     svg{
     background-color: none;
     }
+
 }
 
+textarea{
+    color: $text-dark;
+    ::placeholder{
+        color: $text-dark;
+    }
+}

@@ -23,5 +23,10 @@
         object-fit: cover;
         aspect-ratio:inherit;
     }
+    textarea{
+        resize: none;
+        border:none;
+        outline: none;
+    }
 
 }

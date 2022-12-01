@@ -58,8 +58,17 @@
         }
         button{
             background-color: $light-blue;
-            color:unset;
-    
+            color:#fff;
+            border-radius: 3px;
+            line-height: 20px;
+            padding-inline: 12px;
+            padding-block: 6px;
+            &:hover{
+                background-color: #026aa7;
+            }
+            &:active{
+                background-color: #055a8c;
+            }
             img{
                 width:rem(24px);
             }
