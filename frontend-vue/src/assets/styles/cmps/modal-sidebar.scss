@@ -32,6 +32,10 @@
     }
     .close-mini-modal-btn{
         color: #5e6c84;
+        position: absolute;
+        // top: 0;
+        background-color: transparent;
+        right: 0;
     }
     .option-custom-card{
         display: flex;
@@ -40,6 +44,7 @@
         align-items: center;
         width: 304px;
         position: absolute;
+        padding: 0;
         top: 5px;
     }
 }
