@@ -4,21 +4,20 @@
                 <header class="modal-header">
                     <img src="../assets/icons/dashboard.svg" alt="">
                     <input type="text" v-model="demoCard.title">
-                    <p>in list <span>traco</span></p>
+                    <p>in list <span class="move-card-link">traco</span></p>
                 </header>
                 <section class="card-description">
-                    <span>
-                        <img src="../assets/icons/description.svg" alt="">
-                        <h3>Description</h3>
-                        <img src="../assets/icons/info.svg" alt="info">
-                    </span>
-                    <textarea name="" id="" cols="30" rows="3" placeholder="Add a more detailed description…"></textarea>
+                   
+                    <img src="../assets/icons/description.svg" alt="">
+                    <h3>Description</h3>
+                    <div class="fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div>
+                    <!-- <textarea name="" id="" cols="30" rows="3" placeholder="Add a more detailed description…"></textarea> -->
                 </section>
                 <section class="card-activity-bar flex justify-between">
-                    <span>
+                    
                         <img src="../assets/icons/activities.svg" alt="activities">
                         <h3>Activity</h3>
-                    </span>
+                    
                     <button>Hide Details</button>
                 </section>
             </article>
@@ -39,7 +38,9 @@ export default{
         }
     },
     methods:{
-        
+        toggleTextArea(){
+            console.log('toggle between real and fake textarea')
+        },
     },
     computed: {
     isOn() {
