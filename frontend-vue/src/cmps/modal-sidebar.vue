@@ -19,10 +19,10 @@
             <template #header>
                 <section class="mini-modal-header">
                     <span> {{ miniModalTitle }} </span>
-                    <button class="close-mini-modal-btn" @click="closeMiniModal">X</button>
+                    <button class="clickable close-mini-modal-btn" @click="closeMiniModal">X</button>
                 </section>
             </template>
-            <hr>
+
 
             <template v-if="(miniModalTitle === 'Dates')">
                 <!-- <div class="el-picker-panel__body"></div> -->
@@ -32,21 +32,36 @@
             </template>
             <template v-if="(miniModalTitle === 'Members')">
                 <section class="mini-modal-body">
-                    <input v-model="filterMembersBy" @input="getFilterMembers" type="text" name="" id=""
+                    <input v-model="filterMembersBy" type="text" name="" id=""
                         placeholder="Search members">
                     <span>Board Members</span>
-                    <el-checkbox class="members-checked-box" v-for="member in members" v-model="cardCopy.memberIds"
-                        label="member" size="large" />
+                    <label class="members-checked-box" v-for="member in getFilterMembers" @click="toggleMembers(member)">
+                        <div class="members-checked-box-container">
+                            <div class="user-and-img">
+                                <section class="img-container">
+                                    <img class="anonymous-user-img" src="../assets/icons/anonymous-user.svg">
+                                </section>
+                                {{ member.fullname }}
+                            </div>
+                            <img class="check-img" v-if="checkIfInMemberList(member)" src="../assets/icons/gray-check.svg">
+                        </div>
+                    </label>
                 </section>
             </template>
             <template v-if="(miniModalTitle === 'Labels')">
                 <section class="mini-modal-body">
-                    <input v-model="filterMembersBy" @input="getFilterMembers" type="text" name="" id=""
-                        placeholder="Search labels">
+                    <input v-model="filterLabelsBy" type="text" name="" id="" placeholder="Search labels">
                     <span>Labels</span>
-                    <section class="labels-checked-section">
-                        <el-checkbox class="labels-checked-box" v-for="label in labels" v-model="cardCopy.labelIds"
-                            label="member" size="large" />
+                    <section class="labels-checked-section" v-for="label in boardLabels">
+                        <label class="labels-checked-box" >
+                            <div class="label-container" @click="toggleLabels(label)">
+                                <img class="checked-img" v-if="checkIfInLabelList(label)" src="../assets/icons/checkbox-try.svg">
+                                <img class="check-img" v-else src="../assets/icons/gray-square.svg" alt="">
+                                <button class="color-space" :style="{ backgroundColor: label.color }"><p class="round-circle" :style="{ backgroundColor: label.color }"></p> </button>
+                                <!-- <input class="checkbox " type="type" :style="{ backgroundColor: label.color }"> -->
+                            </div>
+                        </label>
+                        <button class="change-text-btn"><img class="pencil-img" src="../assets/icons/edit.svg" alt=""></button>
                     </section>
                 </section>
             </template>
@@ -103,19 +118,36 @@ export default {
         return {
             IsMiniModalOpen: false,
             miniModalTitle: null,
-            members: ['hi', 'hello'],
-            cardCopy: {},
+            cardCopy: {
+                members: [
+                    {
+                        "_id": "u101",
+                        "fullname": "Alon Hoffman",
+                        "imgUrl": "https://www.google.com"
+                    },
+                    {
+                        "_id": "u102",
+                        "fullname": "Itai Morag",
+                        "imgUrl": "https://www.google.com"
+                    },
+                ],
+                labels: ["l102", "l104"]
+            },
             filterMembersBy: '',
+            filterLabelsBy: '',
             checklist: "checklist",
+            boardMembers: null,
+            boardLabels: null,
+            currMember: null
         }
     },
-    created() {
-
+    async created() {
+        if (!this.$store.getters.boards) await this.$store.dispatch({ type: "loadBoards" });
+        this.boardMembers = this.$store.getters.getMembersOfBoard
+        this.boardLabels = this.$store.getters.getLabelsOfBoard
     },
     methods: {
         openMiniModal(value) {
-            // console.log(`argument = `, argument.value)
-            console.log(`ev = `, value)
             this.miniModalTitle = value
             this.IsMiniModalOpen = true
         },
@@ -123,19 +155,37 @@ export default {
             console.log(`out = `)
             this.IsMiniModalOpen = false
         },
-        getFilterMembers() {
-            //need to filter all members
-            // this.members=whatever returns
-        },
         setBackgroundCard() {
 
         },
+        toggleMembers(member) {
+            const idx = this.cardCopy.members.findIndex((m) => m._id === member._id)
+            if (idx !== -1) this.cardCopy.members.splice(idx, 1)
+            else this.cardCopy.members.push(member)
+        },
+        toggleLabels(label) {
+            console.log(`label = `, label)
+            const idx = this.cardCopy.labels.findIndex((l) => l === label._id)
+            if (idx !== -1) this.cardCopy.labels.splice(idx, 1)
+            else this.cardCopy.labels.push(label._id)
+        },
+        checkIfInMemberList(member) {
+            return this.cardCopy.members.filter((currMember) => currMember._id === member._id).length
+        },
+        checkIfInLabelList(label) {
+            return this.cardCopy.labels.includes(label._id)
+        }
     },
     computed: {
-
-    },
-    components: {
-        customCard,
-    },
-}
+        getFilterMembers(){
+            const regex = new RegExp(this.filterMembersBy, 'i')
+            return this.boardMembers.filter((member) => {
+                return regex.test(member.fullname)
+            })
+        }
+        },
+        components: {
+            customCard,
+        },
+    }
 </script>
