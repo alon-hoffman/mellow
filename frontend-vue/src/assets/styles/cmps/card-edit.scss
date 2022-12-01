@@ -5,16 +5,16 @@
     inset: 0;
     background-color:#000000a3;
     pointer-events: none;
-
     &.on{
+        // z-index:0;
         opacity: 1;
         pointer-events: all;
     }
 }
-
+.modal-content{
+}
 .edit-blocks{
     width: 576px;
-    padding: 0 8px 8px 16px;
 }
 .modal{
     position: fixed;
@@ -27,8 +27,9 @@
     width: 768px;
     border-radius:3px;
     color: $text-dark;
-    // padding: 16px;
+    padding: 1em;
     &.on{
+        // z-index:3;
         opacity: 1;
         pointer-events: all;
     }
@@ -46,7 +47,6 @@
             height: 32px;
             line-height: 24px;
             min-height: 24px;
-            padding: 4px 8px;
             padding-block-end:0;
             color: $text-dark;
             &:focus{
@@ -64,9 +64,6 @@
     & img{
         
     }      
-    & h3{
-        display:inline;
-    }
 
     & .fake-text-area{
         box-shadow: none;
@@ -115,7 +112,7 @@
     display: grid;
     grid-template-columns: 36px 1fr;
     grid-template-rows:  36px 1fr;
-    padding-inline-start: 0.28em;
+    // padding-inline-start: 0.28em;
     grid-template-areas: 
     "icon header"
     ". content";
@@ -123,16 +120,20 @@
         grid-area: icon;
         align-self: center;
         justify-self: center;
-        width: em(25px);
-        height: em(25px);
-        display: inline;
+        width: em(30px);
+        height: em(30px);
         filter: invert(15%) sepia(13%) saturate(3038%) hue-rotate(179deg) brightness(95%) contrast(96%);
         vertical-align: text-bottom;
     }
     .header{
         grid-area: header;
+        padding-inline-start: 6px;
+        padding-top: 0.5rem;
+        height: 32px;
     }
     .content{
         grid-area: content;
+        margin-top: -1px;
+        padding-inline-start: 0.55rem;
     }
 }

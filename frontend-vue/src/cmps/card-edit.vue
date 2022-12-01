@@ -1,5 +1,5 @@
 <template>
-            <div  class="modal-screen" :class="isOn" @click="$emit('toggleEdit')">
+            <div  class="modal-screen" :class="isOn" @click="$emit('toggleEdit')"></div>
             <article class="modal" :class="isOn">
                 <header class="modal-header edit-block">
                     <img class="icon" src="../assets/icons/dashboard.svg" alt="">
@@ -8,10 +8,13 @@
                 </header>
                 <div class="modal-content flex">
                     <section class="edit-blocks">
-                        <section class="card-description edit-block">
+                        <section class="edit-block">
+                            <!-- <img class="icon" src="../assets/icons/dashboard.svg" alt=""> -->
                             <img class="icon" src="../assets/icons/description.svg" alt="">
                             <h3 class="header">Description</h3>
-                            <div class="content fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div>
+                            <input class="header" type="text" v-model="demoCard.title">
+                            <p class="content">in list <span class="move-card-link">traco</span></p>
+                          <!--   <div class="content fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div> -->
                             <!-- <textarea name="" id="" cols="30" rows="3" placeholder="Add a more detailed description…"></textarea> -->
                         </section>
                         <section class="card-activity-bar flex justify-between">
@@ -23,8 +26,6 @@
                     <modal-sidebar />
                 </div>
             </article>
-        </div>
-
 </template>
 
 <script>
