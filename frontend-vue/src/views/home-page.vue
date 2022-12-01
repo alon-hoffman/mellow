@@ -10,7 +10,7 @@
             <p>Keep everything in the same place—even if your team isn't.</p>
           </div>
         </div>
-        <button class="guest-button">Enter as a guest</button>
+        <button @click="enterAsGuest" class="guest-button">Enter as a guest</button>
         <img class="trello-board-img" alt="Vue logo" src="https://images.ctfassets.net/rz1oowkt5gyp/5lDhjfcNTvIKeiBPtxRdQ7/67717ed94b8f6e7fb13a59c109933596/HeroBoard__CalendarView_4x.png?w=960&fm=webp">
       </div>
     </div>
@@ -28,12 +28,15 @@ export default {
     return {
     }
   },
-  computed: {
-  },
   created() {
   },
   methods: {
-  }
+    enterAsGuest(){
+      this.$router.push('/board')
+    }
+  },
+  computed: {
+  },
 
 }
 </script>
