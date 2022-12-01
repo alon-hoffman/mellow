@@ -1,5 +1,5 @@
 <template>
-            <div class="modal-screen" :class="isOn" @click="$emit('toggleEdit')"></div>
+            <div  class="modal-screen" :class="isOn" @click="$emit('toggleEdit')"></div>
             <article class="modal" :class="isOn">
                 <header class="modal-header">
                     <img src="../assets/icons/dashboard.svg" alt="">
