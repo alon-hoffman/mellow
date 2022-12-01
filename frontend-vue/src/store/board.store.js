@@ -26,9 +26,9 @@ export const boardStore = {
     },
     getters: {
         boards({ boards }) { return boards },
-        getCurrBoard(state) {return state.currBoard},
-        getMembersOfBoard(state){return state.currBoard.members},
-        getLabelsOfBoard(state){return state.currBoard.labels},
+        getCurrBoard(state) { return state.currBoard },
+        getMembersOfBoard(state) { return state.currBoard.members },
+        getLabelsOfBoard(state) { return state.currBoard.labels },
     },
     mutations: {
         setBoards(state, { boards }) {
@@ -47,7 +47,7 @@ export const boardStore = {
         setBoardById(state, { _id }) {
             const board = JSON.parse(JSON.stringify(state.boards))[0];
             // const board = state.boards.find(c => c.id === _id)
-            state.currBoard=board
+            state.currBoard = board
         },
 
     },
@@ -90,6 +90,15 @@ export const boardStore = {
                 throw err
             }
         },
+        async saveList({ commit, dispatch, state }, { list }) {
+            console.log('saveList', list)
+            try {
+
+            } catch (err) {
+                console.log('Error, could not Add or update list')
+                throw err
+            }
+        }
 
     }
 }
