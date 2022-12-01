@@ -31,6 +31,17 @@
         background-color: unset;
         color: unset;
         border: none;
+        width: 100%;
+        text-align:start;
+        &:hover{
+            background-color: #091e4214;
+            color:#172b4d;
+        }
+        & span{
+            font-size: 20px;
+            position: relative;
+            top: 2px;
+        }
     }
 
     .add-card-section{

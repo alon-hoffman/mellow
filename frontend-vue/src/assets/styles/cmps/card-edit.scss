@@ -136,10 +136,8 @@
 
 .comment-box{
     background-color: #fff;
-    resize: none;
     border-radius: 3px;
     line-height: 20px;
-    // min-height: 20px;
    
     // height: 20px;
     // margin: -8px -12px;
@@ -148,11 +146,17 @@
     transition-duration: 85ms;
     transition-property: background-color,border-color,box-shadow;
     transition-timing-function: ease;
-    box-shadow: 0 4px 8px -2px #091e4240,
+    box-shadow:0 0 0 1px #091e4214;
+
+    &:has(textarea:focus){
+        padding-bottom:4em;
+        box-shadow: 0 4px 8px -2px #091e4240,
             0 0 0 1px #091e4214;
+    }
     & textarea{
         border-radius: 3px;
-
+        min-height: 20px;
+        resize: none;
         overflow: hidden;
         overflow-wrap: break-word;
         width: 100%;
@@ -164,8 +168,7 @@
         }
         &:focus{
         outline: none;
-        box-shadow: 0 4px 8px -2px #091e4240,
-            0 0 0 1px #091e4214;
+        
         }
     }
 }

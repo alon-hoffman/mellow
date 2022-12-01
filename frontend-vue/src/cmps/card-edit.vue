@@ -24,7 +24,7 @@
                                 <li class="edit-block">
                                     <img src="../assets/icons/profile-confluence.svg" alt="EE" class="icon">
                                     <div class="comment-box">
-                                        <textarea type="text" class="header"></textarea>
+                                        <textarea type="text" placeholder="Write a comment..."></textarea>
                                         <footer class="comment-options"></footer>
                                     </div>
                                 </li>
