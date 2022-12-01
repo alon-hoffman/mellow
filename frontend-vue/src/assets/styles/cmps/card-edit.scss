@@ -12,6 +12,10 @@
     }
 }
 
+.edit-blocks{
+    width: 576px;
+    padding: 0 8px 8px 16px;
+}
 .modal{
     position: fixed;
     top: 50%;
@@ -23,14 +27,13 @@
     width: 768px;
     border-radius:3px;
     color: $text-dark;
-    padding: 16px;
+    // padding: 16px;
     &.on{
         opacity: 1;
         pointer-events: all;
     }
     & > * {
         margin-top:0.21em;
-        padding-inline-start: 0.28em;
     }
     &-header{
         & input{
@@ -112,6 +115,7 @@
     display: grid;
     grid-template-columns: 36px 1fr;
     grid-template-rows:  36px 1fr;
+    padding-inline-start: 0.28em;
     grid-template-areas: 
     "icon header"
     ". content";

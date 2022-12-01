@@ -7,7 +7,6 @@
                     <p class="content">in list <span class="move-card-link">traco</span></p>
                 </header>
                 <div class="modal-content flex">
-                    <modal-sidebar />
                     <section class="edit-blocks">
                         <section class="card-description edit-block">
                             <img class="icon" src="../assets/icons/description.svg" alt="">
@@ -21,6 +20,7 @@
                             <button>Hide Details</button>
                         </section>
                     </section>
+                    <modal-sidebar />
                 </div>
             </article>
         </div>
