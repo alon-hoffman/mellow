@@ -1,10 +1,12 @@
 <template>
+<section class="modal-add-menu">
 
+</section>
 </template>
 
 
 <script>
-export default{
+export default {
 
 }
 </script>

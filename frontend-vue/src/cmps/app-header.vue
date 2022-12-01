@@ -41,6 +41,7 @@ export default {
     return {
       route: this.$route,
       isCreateModalOpen: false,
+      // placeholder
     }
   },
   created() {
