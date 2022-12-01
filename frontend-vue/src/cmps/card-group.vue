@@ -42,7 +42,8 @@
         this.isCardEdited=false
       },
       cardAdd(){
-        this.$emit('cardAdd', this.newCard)
+        this.list.cards.push(this.newCard)
+        this.$emit('saveList', this.list)
       },
     },
     components:{

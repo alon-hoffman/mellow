@@ -6,9 +6,9 @@
         :list="list"
         :key="list.id"
         @cardEdit="$emit('cardEdit', $event)"
-        @cardAdd="addCard"
+        @saveList="$emit('saveList', $event)"
       />
-      <button v-if="!isNewListEdit" @click="(isNewListEdit=true)">Add another list</button>
+      <button v-if="!isNewListEdit" @click="isNewListEdit=true">Add another list</button>
       <form v-else @submit.prevent="addList"  v-click-outside="closeEdit" >
         <input type="text" v-model="newTitle"/>
         <input type="submit">
@@ -37,14 +37,11 @@ export default {
   methods: {
     addList(){
       this.isNewListEdit=false
-      this.$emit('addList', this.newTitle)
+      this.$emit('saveList', {list: this.newTitle})
     },
-    
     closeEdit(){
       this.isNewListEdit=false
     }
   },
 };
 </script>
-
-<!-- $emit('addList') -->

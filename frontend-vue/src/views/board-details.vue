@@ -27,7 +27,9 @@
         </button>
       </div>
     </div>
-    <group-list @addList="addList" @cardEdit="toggleEdit" v-if="board.groups" :lists="board.groups" />
+    <group-list @saveList="saveList"
+                @cardEdit="toggleEdit" 
+                v-if="board.groups" :lists="board.groups" />
   </section>
 </template>
 
@@ -38,12 +40,6 @@ import cardEdit from "../cmps/card-edit.vue";
 //icons
 
 export default {
-  // data() {
-  //   return {
-  //     board: null,
-  //     lists: null,
-  //   };
-  // },
   components: {
     sidebar,
     groupList,
@@ -65,14 +61,16 @@ export default {
   },
   methods: {
     toggleEdit(cardId) {
-      console.log("toggling card");
       this.$store.commit({ type: "toggleScreen" });
     },
-    addList(title) {
-      console.log("🚀 ~ file: board-details.vue:84 ~ addList ~ title", title)
-      this.board.groups.push({ title });
-      this.$store.dispatch({ type: "updateBoard", board: this.board });
+    saveList(list){
+      this.$store.dispatch({ type: 'saveList', list})
     },
+    // saveList(list) {
+    //   console.log("🚀 ~ file: board-details.vue:84 ~ updateList:", list)
+    //   // this.board.groups.push({ title })
+    //   this.$store.dispatch({ type: "updateBoard", list });
+    // },
   },
 };
 </script>
