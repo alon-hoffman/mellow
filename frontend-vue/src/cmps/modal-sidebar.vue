@@ -32,10 +32,10 @@
             </template>
             <template v-if="(miniModalTitle === 'Members')">
                 <section class="mini-modal-body">
-                    <input v-model="filterMembersBy" type="text" name="" id=""
-                        placeholder="Search members">
-                    <span>Board Members</span>
-                    <label class="members-checked-box" v-for="member in getFilterMembers" @click="toggleMembers(member)">
+                    <input v-model="filterMembersBy" type="text" name="" id="" placeholder="Search members">
+                    <span>Board members</span>
+                    <label class="members-checked-box" v-for="member in getFilterMembers"
+                        @click="toggleMembers(member)">
                         <div class="members-checked-box-container">
                             <div class="user-and-img">
                                 <section class="img-container">
@@ -43,7 +43,8 @@
                                 </section>
                                 {{ member.fullname }}
                             </div>
-                            <img class="check-img" v-if="checkIfInMemberList(member)" src="../assets/icons/gray-check.svg">
+                            <img class="check-img" v-if="checkIfInMemberList(member)"
+                                src="../assets/icons/gray-check.svg">
                         </div>
                     </label>
                 </section>
@@ -53,15 +54,19 @@
                     <input v-model="filterLabelsBy" type="text" name="" id="" placeholder="Search labels">
                     <span>Labels</span>
                     <section class="labels-checked-section" v-for="label in boardLabels">
-                        <label class="labels-checked-box" >
-                            <div class="label-container" @click="toggleLabels(label)">
-                                <img class="checked-img" v-if="checkIfInLabelList(label)" src="../assets/icons/checkbox-try.svg">
-                                <img class="check-img" v-else src="../assets/icons/gray-square.svg" alt="">
-                                <button class="color-space" :style="{ backgroundColor: label.color }"><p class="round-circle" :style="{ backgroundColor: label.color }"></p> </button>
+                        <label class="clickable labels-checked-box">
+                            <div class=" label-container" @click="toggleLabels(label)">
+                                <img class="checked-img" v-if="checkIfInLabelList(label)"
+                                    src="../assets/icons/checkbox-try.svg">
+                                <img class="box-img" v-else src="../assets/icons/gray-square.svg" alt="">
+                                <button class="color-space" :style="{ backgroundColor: label.color }">
+                                    <p class="round-circle" :style="{ backgroundColor: label.color }"></p>
+                                </button>
                                 <!-- <input class="checkbox " type="type" :style="{ backgroundColor: label.color }"> -->
                             </div>
                         </label>
-                        <button class="change-text-btn"><img class="pencil-img" src="../assets/icons/edit.svg" alt=""></button>
+                        <button class="clickable change-text-btn"><img class="pencil-img" src="../assets/icons/edit.svg"
+                                alt=""></button>
                     </section>
                 </section>
             </template>
@@ -162,6 +167,7 @@ export default {
             const idx = this.cardCopy.members.findIndex((m) => m._id === member._id)
             if (idx !== -1) this.cardCopy.members.splice(idx, 1)
             else this.cardCopy.members.push(member)
+            $
         },
         toggleLabels(label) {
             console.log(`label = `, label)
@@ -174,18 +180,21 @@ export default {
         },
         checkIfInLabelList(label) {
             return this.cardCopy.labels.includes(label._id)
-        }
+        },
+        updateCard() {
+            this.$emit('updateCard', this.card)
+        },
     },
     computed: {
-        getFilterMembers(){
+        getFilterMembers() {
             const regex = new RegExp(this.filterMembersBy, 'i')
             return this.boardMembers.filter((member) => {
                 return regex.test(member.fullname)
             })
         }
-        },
-        components: {
-            customCard,
-        },
-    }
+    },
+    components: {
+        customCard,
+    },
+}
 </script>

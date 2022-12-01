@@ -93,6 +93,9 @@
             }
 
             .check-img {
+                width: 12px;
+            }
+            .box-img {
                 width: 15px;
             }
             .checked-img{
@@ -139,7 +142,7 @@
                 // margin: 0 12px;
                 padding: 0 1px;
                 color: #5e6c84;
-                font-weight: 700;
+                font-weight: 600;
                 margin-top: 16px;
                 margin-bottom: 8px;
             }
@@ -170,7 +173,7 @@
             align-items: center;
             width: 280px;
             height: 40px;
-            padding: 8px;
+            padding: 6px 12px 5px 5px;
 
             &:hover {
                 background-color: #5e6c8425;

@@ -31,7 +31,7 @@
                             </ul>
                         </section>
                     </section>
-                    <modal-sidebar />
+                    <modal-sidebar @updateCard="updateCard"/>
                 </div>
             </article>
 </template>
@@ -55,6 +55,9 @@ export default{
         toggleTextArea(){
             console.log('toggle between real and fake textarea')
         },
+        updateCard(card){
+            this.$emit('updateCard',card)
+        }
     },
     computed: {
     isOn() {
