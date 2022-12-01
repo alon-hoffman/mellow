@@ -27,7 +27,7 @@
         </button>
       </div>
     </div>
-    <group-list @addList="addList" @cardEdit="toggleEdit" v-if="board.lists" :lists="board.lists" />
+    <group-list @addList="addList" @cardEdit="toggleEdit" v-if="board.groups" :lists="board.groups" />
   </section>
 </template>
 
