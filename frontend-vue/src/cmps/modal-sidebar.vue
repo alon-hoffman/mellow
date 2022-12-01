@@ -18,29 +18,73 @@
         <custom-card class="option-custom-card" v-click-outside="closeMiniModal" v-if="IsMiniModalOpen">
             <template #header>
                 <section class="mini-modal-header">
-                    <span> {{ MiniModalTitle }} </span>
+                    <span> {{ miniModalTitle }} </span>
                     <button class="close-mini-modal-btn" @click="closeMiniModal">X</button>
                 </section>
             </template>
             <hr>
 
-            <template v-if="(MiniModalTitle === 'Dates')">
-                <el-date-picker type="date" placeholder="Pick a day" size="large" />
+            <template v-if="(miniModalTitle === 'Dates')">
+                <!-- <div class="el-picker-panel__body"></div> -->
+                <section class="mini-modal-body">
+                    <el-date-picker type="date" placeholder="Pick a day" size="large" />
+                </section>
             </template>
-            <template v-if="(MiniModalTitle === 'Members')">
-                <input v-modal="filterMembersBy" @input="getFilterMembers" type="text" name="" id="">
-                <span>Board Members</span>
-                <el-checkbox class="members-checked-box" v-for="member in members" v-model="card.memberIds" label="member" size="large"/>
-                <ul> <li v-for="member in members"></li></ul>
+            <template v-if="(miniModalTitle === 'Members')">
+                <section class="mini-modal-body">
+                    <input v-model="filterMembersBy" @input="getFilterMembers" type="text" name="" id=""
+                        placeholder="Search members">
+                    <span>Board Members</span>
+                    <el-checkbox class="members-checked-box" v-for="member in members" v-model="cardCopy.memberIds"
+                        label="member" size="large" />
+                </section>
             </template>
-            <template v-if="(MiniModalTitle === 'Labels')">
-               
+            <template v-if="(miniModalTitle === 'Labels')">
+                <section class="mini-modal-body">
+                    <input v-model="filterMembersBy" @input="getFilterMembers" type="text" name="" id=""
+                        placeholder="Search labels">
+                    <span>Labels</span>
+                    <section class="labels-checked-section">
+                        <el-checkbox class="labels-checked-box" v-for="label in labels" v-model="cardCopy.labelIds"
+                            label="member" size="large" />
+                    </section>
+                </section>
             </template>
-            <template v-if="(MiniModalTitle === 'Checklist')">
-                <el-checkbox v-model="checked1" label="Option1" size="large"/>
+            <template v-if="(miniModalTitle === 'Checklist')">
+                <section class="mini-modal-body">
+                    <span>Title</span>
+                    <input v-model="checklist" @submit="addChecklist" type="text">
+                </section>
             </template>
-            <template v-if="(MiniModalTitle === 'Cover')">
-                
+            <template v-if="(miniModalTitle === 'Attachment')">
+                <section class="mini-modal-body">
+                    <span>Attach a link</span>
+                    <input type="text" placeholder="Paste any link here...">
+                </section>
+            </template>
+            <template v-if="(miniModalTitle === 'Cover')">
+                <section class="mini-modal-body">
+                    <span>Colors</span>
+                    <div class="first-colors-row">
+                        <button class="green-btn"></button>
+                        <button class="yellow-btn"></button>
+                        <button class="orange-btn"></button>
+                        <button class="red-btn"></button>
+                        <button class="purple-btn"></button>
+                    </div>
+                    <div class="second-colors-row">
+                        <button class="blue-btn"></button>
+                        <button class="bright-blue-btn"></button>
+                        <button class="bright-green-btn"></button>
+                        <button class="pink-btn"></button>
+                        <button class="dark-blue-btn"></button>
+                    </div>
+                    <span>Attachments</span>
+                    <label class="cover-img-label">
+                        <div class="fake-button cover-img-btn">Upload a cover image </div><input
+                            @input="setBackgroundCard" class="cover-img-input" type="file">
+                    </label>
+                </section>
             </template>
         </custom-card>
     </section>
@@ -58,9 +102,11 @@ export default {
     data() {
         return {
             IsMiniModalOpen: false,
-            MiniModalTitle: null,
-            members:['hi','hello'],
-            filterMembersBy:''
+            miniModalTitle: null,
+            members: ['hi', 'hello'],
+            cardCopy: {},
+            filterMembersBy: '',
+            checklist: "checklist",
         }
     },
     created() {
@@ -70,16 +116,19 @@ export default {
         openMiniModal(value) {
             // console.log(`argument = `, argument.value)
             console.log(`ev = `, value)
-            this.MiniModalTitle = value
+            this.miniModalTitle = value
             this.IsMiniModalOpen = true
         },
         closeMiniModal() {
             console.log(`out = `)
             this.IsMiniModalOpen = false
         },
-        getFilterMembers(){
-//need to filter all members
-// this.members=whatever returns
+        getFilterMembers() {
+            //need to filter all members
+            // this.members=whatever returns
+        },
+        setBackgroundCard() {
+
         },
     },
     computed: {
