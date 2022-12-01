@@ -9,18 +9,26 @@
                 <div class="modal-content flex">
                     <section class="edit-blocks">
                         <section class="edit-block">
-                            <!-- <img class="icon" src="../assets/icons/dashboard.svg" alt=""> -->
                             <img class="icon" src="../assets/icons/description.svg" alt="">
                             <h3 class="header">Description</h3>
-                            <!-- <input class="header" type="text" v-model="demoCard.title"> -->
-                            <!-- <p class="content">in list <span class="move-card-link">traco</span></p> -->
-                          <!--   <div class="content fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div> -->
+                            <div class="content fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div>
                             <!-- <textarea name="" id="" cols="30" rows="3" placeholder="Add a more detailed description…"></textarea> -->
                         </section>
-                        <section class="card-activity-bar flex justify-between">
-                                <img src="../assets/icons/activities.svg" alt="activities">
+                        <section class="edit-block">
+                            <img class="icon" src="../assets/icons/activities.svg" alt="activities">
+                            <span class="header flex justify-between">
                                 <h3>Activity</h3>
-                            <button>Hide Details</button>
+                                <button class="fake-button">Hide Details</button>
+                            </span>
+                            <ul class="content">
+                                <li class="edit-block">
+                                    <img src="../assets/icons/profile-confluence.svg" alt="EE" class="icon">
+                                    <div class="comment-box">
+                                        <textarea type="text" placeholder="Write a comment..."></textarea>
+                                        <footer class="comment-options"></footer>
+                                    </div>
+                                </li>
+                            </ul>
                         </section>
                     </section>
                     <modal-sidebar />

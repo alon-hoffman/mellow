@@ -45,13 +45,13 @@ const startingBoard = [
                     {
                         "id": "c101",
                         "title": "Make Logo",
-                        imgURL: "https://trello.com/1/cards/63860d3af434df009e75619b/attachments/638622d97e03e4019f8c5399/previews/638622d97e03e4019f8c53b9/download/%D7%94%D7%95%D7%A8%D7%93%D7%94.png"
+                        "imgURL": "https://trello.com/1/cards/63860d3af434df009e75619b/attachments/638622d97e03e4019f8c5399/previews/638622d97e03e4019f8c53b9/download/%D7%94%D7%95%D7%A8%D7%93%D7%94.png"
 
                     },
                     {
                         "id": "c102",
                         "title": "Find employees",
-                        members: [
+                        "members": [
                             {
                                 "_id": "u101",
                                 "fullname": "Alon Hoffman",
@@ -73,7 +73,7 @@ const startingBoard = [
                     {
                         "id": "c103",
                         "title": "Research for prime locations and peak hours",
-                        labels: ["important", "urgent"]
+                        "labels": ["l102", "l104"]
                     },
                     {
                         "id": "c104",
@@ -105,7 +105,38 @@ const startingBoard = [
                             "_id": "u102",
                             "fullname": "Itai Morag",
                         }],
-                        labels: ["important", "urgent"],
+                        "labels": [
+                            {
+                                "id": "l101",
+                                "title": "When possible",
+                                "color": "#d6ecd2"
+                            },
+                            {
+                                "id": "l102",
+                                "title": "Important",
+                                "color": "#faf3c0"
+                            },
+                            {
+                                "id": "l103",
+                                "title": "",
+                                "color": "#fce6c6"
+                            },
+                            {
+                                "id": "l104",
+                                "title": "Urgent",
+                                "color": "#f5d3ce"
+                            },
+                            {
+                                "id": "l105",
+                                "title": "",
+                                "color": "#eddbf4"
+                            },
+                            {
+                                "id": "l106",
+                                "title": "",
+                                "color": "#bcd9ea"
+                            },
+                        ],
                         "dueDate": 16156215211,
                     }
                 ],
@@ -119,9 +150,9 @@ const startingBoard = [
                     {
                         "id": "c1534",
                         "title": "Look for taco truck",
-                        imgURL: "https://trello.com/1/cards/63860ca5644759011faa16a2/attachments/63860d602444d1006e32080a/previews/63860d612444d1006e320814/download/IMG_5708__1_.jpg",
-                        labels: ["important"],
-                        members: [
+                        "imgURL": "https://trello.com/1/cards/63860ca5644759011faa16a2/attachments/63860d602444d1006e32080a/previews/63860d612444d1006e320814/download/IMG_5708__1_.jpg",
+                        "labels": ["important"],
+                        "members": [
                             {
                                 "_id": "u101",
                                 "fullname": "Alon Hoffman",
@@ -144,7 +175,7 @@ const startingBoard = [
                     {
                         "id": "c15skdj",
                         "title": "Pass Safety Inspection",
-                        createdBy: {
+                        "createdBy": {
                             "_id": "u102",
                             "fullname": "Itai Morag",
                         }
@@ -152,8 +183,8 @@ const startingBoard = [
                     {
                         "id": "askjdkj",
                         "title": "Convince mom to cook in the truck",
-                        imgURL: "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x720/de20062beee58da62ee47ad12f309837/photo-1442458370899-ae20e367c5d8.jpg",
-                        createdBy: {
+                        "imgURL": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x720/de20062beee58da62ee47ad12f309837/photo-1442458370899-ae20e367c5d8.jpg",
+                        "createdBy": {
                             "_id": "u102",
                             "fullname": "Itai Morag",
                         }
@@ -168,8 +199,8 @@ const startingBoard = [
                     {
                         "id": "jvlvhlv",
                         "title": "Stress test employees",
-                        imgURL: "https://trello-backgrounds.s3.amazonaws.com/Shared…eba801f64257/photo-1604208485423-f19bc2aaae2d.jpg",
-                        createdBy: {
+                        "imgURL": "https://trello-backgrounds.s3.amazonaws.com/Shared…eba801f64257/photo-1604208485423-f19bc2aaae2d.jpg",
+                        "createdBy": {
                             "_id": "u102",
                             "fullname": "Itai Morag",
                         }
@@ -177,7 +208,7 @@ const startingBoard = [
                     {
                         "id": "nalksjdl",
                         "title": "Check spiciness",
-                        createdBy: {
+                        "createdBy": {
                             "_id": "u102",
                             "fullname": "Itai Morag",
                         }
@@ -192,12 +223,12 @@ const startingBoard = [
                     {
                         "id": "79ucjxzi",
                         "title": "Learn taco recipe",
-                        imgURL: "https://trello.com/1/cards/63860b4384db8b03aaa58f70/attachments/6386149eb4143f0070807dc6/previews/6386149eb4143f0070807ddf/download/AU-T-10001064-Taco-Recipe_ver_2.jpg",
-                        createdBy: {
+                        "imgURL": "https://trello.com/1/cards/63860b4384db8b03aaa58f70/attachments/6386149eb4143f0070807dc6/previews/6386149eb4143f0070807ddf/download/AU-T-10001064-Taco-Recipe_ver_2.jpg",
+                        "createdBy": {
                             "_id": "u102",
                             "fullname": "Itai Morag",
                         },
-                        labels: ["important"],
+                        "labels": ["l102"],
                     },
                 ]
             },
