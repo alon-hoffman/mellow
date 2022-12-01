@@ -1,6 +1,6 @@
 <template>
-            <div class="modal-screen" :class="isOn" @click="$emit('toggleEdit')"></div>
-            <article class="modal on" :class="isOn">
+            <div  class="modal-screen" :class="isOn" @click="$emit('toggleEdit')"></div>
+            <article class="modal" :class="isOn">
                 <header class="modal-header">
                     <img src="../assets/icons/dashboard.svg" alt="">
                     <input type="text" v-model="demoCard.title">
@@ -39,6 +39,7 @@ export default{
         }
     },
     methods:{
+        
     },
     computed: {
     isOn() {

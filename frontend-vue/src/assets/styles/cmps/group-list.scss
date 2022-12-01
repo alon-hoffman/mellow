@@ -1,5 +1,6 @@
 .group-list{
     overflow-x: scroll;
+    flex-grow: 1;
     ul{
         display: flex;
         gap: em(10px);
