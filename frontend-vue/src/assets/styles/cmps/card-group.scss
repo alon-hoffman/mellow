@@ -9,12 +9,20 @@
     color: $clr4;
     background-color: $clr2;
     border-radius: 3px;
-
+    .title-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .group-title{
+        padding-inline-end: 50px;
+        font-size: rem(16px);
         background-color: unset;
-        color: $clr4;
+        color: $clr5;
         border: none;
-        margin-inline-start: rem(10px);
+        margin-inline-start: rem(16px);
+        padding-top: rem(13px);
+        padding-bottom: rem(9px);
     }
 
     .add-card{
