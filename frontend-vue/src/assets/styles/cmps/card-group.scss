@@ -14,8 +14,12 @@
         justify-content: space-between;
         align-items: center;
     }
+    svg{
+        margin-inline-end: 1rem;
+        font-size:50px;
+    }
+
     .group-title{
-        padding-inline-end: 50px;
         font-size: rem(16px);
         background-color: unset;
         color: $clr5;
