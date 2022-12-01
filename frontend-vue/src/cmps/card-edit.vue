@@ -12,8 +12,8 @@
                             <!-- <img class="icon" src="../assets/icons/dashboard.svg" alt=""> -->
                             <img class="icon" src="../assets/icons/description.svg" alt="">
                             <h3 class="header">Description</h3>
-                            <input class="header" type="text" v-model="demoCard.title">
-                            <p class="content">in list <span class="move-card-link">traco</span></p>
+                            <!-- <input class="header" type="text" v-model="demoCard.title"> -->
+                            <!-- <p class="content">in list <span class="move-card-link">traco</span></p> -->
                           <!--   <div class="content fake-text-area fake-button" @click="toggleTextArea">Add a more detailed description…</div> -->
                             <!-- <textarea name="" id="" cols="30" rows="3" placeholder="Add a more detailed description…"></textarea> -->
                         </section>
@@ -34,6 +34,7 @@ export default{
     props:{
         isScreen : Boolean
     },
+    emits: ['toggleEdit'],
     data(){
         return {
             demoCard: {

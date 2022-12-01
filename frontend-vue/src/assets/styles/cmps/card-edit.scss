@@ -56,14 +56,14 @@
             }
         }
 
-        & p{
+        // & p{
 
-        }
+        // }
     }
 
-    & img{
+    // & img{
         
-    }      
+    // }      
 
     & .fake-text-area{
         box-shadow: none;
@@ -71,12 +71,12 @@
         text-decoration: none;
         }
 
-    & textarea{
-        &:focus{
-        }
+    // & textarea{
+    //     &:focus{
+    //     }
 
         
-    }
+    // }
 }
 
 .move-card-link{
@@ -130,6 +130,7 @@
         padding-inline-start: 6px;
         padding-top: 0.5rem;
         height: 32px;
+        margin: 0;
     }
     .content{
         grid-area: content;
