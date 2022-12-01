@@ -1,5 +1,5 @@
 <template>
-  <section class="board-details">
+  <section class="board-details" v-if="board">
     <!-- <sidebar/> -->
     <card-edit :isScreen="isScreen" @toggleEdit="toggleEdit" />
     <div class="board-header">
@@ -27,7 +27,7 @@
         </button>
       </div>
     </div>
-    <group-list @addList="addList" @cardEdit="toggleEdit" v-if="lists" :lists="lists" />
+    <group-list @addList="addList" @cardEdit="toggleEdit" v-if="board.groups" :lists="board.groups" />
   </section>
 </template>
 
@@ -38,34 +38,30 @@ import cardEdit from "../cmps/card-edit.vue";
 //icons
 
 export default {
-  data() {
-    return {
-      board: null,
-      lists: null,
-    };
-  },
+  // data() {
+  //   return {
+  //     board: null,
+  //     lists: null,
+  //   };
+  // },
   components: {
     sidebar,
     groupList,
     cardEdit,
   },
-
   computed: {
     isScreen() {
       return this.$store.getters.isScreen;
     },
-    getLists() {
-      return this.lists;
+    board() {
+      return JSON.parse(JSON.stringify(this.$store.getters.getCurrBoard))
     },
   },
   async created() {
     if(!this.$store.getters.boards) await this.$store.dispatch({ type: "loadBoards" });
+    // todo check if the param really is _id
     const { _id } = this.$route.params
     await this.$store.commit({ type: "setBoardById"}, {_id });
-    const currBoard = this.$store.getters.getCurrBoard;
-    this.board = currBoard
-    this.lists = this.board?.groups;
-
   },
   methods: {
     toggleEdit(cardId) {
