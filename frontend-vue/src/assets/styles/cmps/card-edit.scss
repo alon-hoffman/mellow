@@ -24,7 +24,6 @@
     border-radius:3px;
     color: $text-dark;
     padding: 16px;
-    // padding-top: 21px;
     &.on{
         opacity: 1;
         pointer-events: all;
@@ -39,16 +38,13 @@
             border:none;
             background: #0000;
             border-radius: 3px;
-            // box-shadow: none;
             font-size: 20px;
             font-weight: 600;
             height: 32px;
             line-height: 24px;
-            // margin: -4px -8px;
             min-height: 24px;
             padding: 4px 8px;
             padding-block-end:0;
-            // resize: none;
             color: $text-dark;
             &:focus{
                 background-color: #fff;
@@ -110,4 +106,25 @@
 
     }
 
+}
+
+
+.edit-block{
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    grid-template-rows:  36px 1fr;
+    grid-template-areas: 
+    "icon header"
+    ". content";
+    .icon{
+        grid-area: icon;
+        align-self: center;
+        justify-self: center;
+    }
+    .header{
+        grid-area: header;
+    }
+    .content{
+        grid-area: content;
+    }
 }
