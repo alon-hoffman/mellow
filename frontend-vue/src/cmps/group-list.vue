@@ -1,5 +1,4 @@
 <template>
-  <h1>hi</h1>
   <section v-if="lists" class="group-list">
     <ul class="clean-list">
     <card-group v-for="list in lists" :list="list" :key="list.id" @cardEdit="$emit('cardEdit', $event)"/>
