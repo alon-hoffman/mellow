@@ -15,19 +15,22 @@
         <div @click="openMiniModal('Cover')" class="fake-button add-option-div"><img class="add-option-img"
                 src="../assets/icons/cover.svg" alt="">Cover
         </div>
-        <custom-card  v-if="IsMiniModalOpen">
+        <custom-card class="option-custom-card" v-click-outside="closeMiniModal" v-if="IsMiniModalOpen">
             <template #header>
-                <p><span class="fw-bold">Name:</span> </p>
-                <p><span class="fw-bold">In stock:</span> </p>
-                <p><span class="fw-bold">Price:</span></p>
+                <section class="mini-modal-header">
+                    <span> {{ MiniModalTitle }} </span>
+                    <button class="close-mini-modal-btn" @click="closeMiniModal">X</button>
+                </section>
             </template>
+            <hr>
 
-            <template #footer>
-                <div class="btn-group">
-                    <button class="btn btn-primary">edit</button>
-                    <button  class="btn btn-info">details</button>
-                    <button  class="btn btn-danger">delete</button>
-                </div>
+            <template v-if="(MiniModalTitle==='Dates')">
+                <el-date-picker
+        type="date"
+        placeholder="Pick a day"
+        size="large"
+        
+      />
             </template>
         </custom-card>
     </section>
@@ -44,7 +47,8 @@ export default {
     },
     data() {
         return {
-            IsMiniModalOpen:false
+            IsMiniModalOpen: false,
+            MiniModalTitle: null,
         }
     },
     created() {
@@ -54,10 +58,12 @@ export default {
         openMiniModal(value) {
             // console.log(`argument = `, argument.value)
             console.log(`ev = `, value)
-            this.IsMiniModalOpen=true
+            this.MiniModalTitle = value
+            this.IsMiniModalOpen = true
         },
-        closeMiniModal(){
-            this.IsMiniModalOpen=false
+        closeMiniModal() {
+            console.log(`out = `)
+            this.IsMiniModalOpen = false
         }
     },
     computed: {

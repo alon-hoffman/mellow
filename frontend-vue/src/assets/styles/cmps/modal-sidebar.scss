@@ -18,4 +18,28 @@
         margin-top: 8px;
         height: 32px;
     }
+    .mini-modal-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            font-size: 14px;
+            margin: 0;
+            margin: 0 12px;
+            padding: 0 32px;
+            color: #5e6c84;
+        }
+    }
+    .close-mini-modal-btn{
+        color: #5e6c84;
+    }
+    .option-custom-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 304px;
+        position: absolute;
+        top: 5px;
+    }
 }
