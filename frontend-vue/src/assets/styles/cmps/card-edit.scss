@@ -59,11 +59,7 @@
     }
 
     & img{
-        width: em(25px);
-        height: em(25px);
-        display: inline;
-        filter: invert(15%) sepia(13%) saturate(3038%) hue-rotate(179deg) brightness(95%) contrast(96%);
-        vertical-align: text-bottom;
+        
     }      
     & h3{
         display:inline;
@@ -103,7 +99,6 @@
     &:active{
             background-color:#e4f0f6;
             color:#0079bf;
-
     }
 
 }
@@ -120,6 +115,11 @@
         grid-area: icon;
         align-self: center;
         justify-self: center;
+        width: em(25px);
+        height: em(25px);
+        display: inline;
+        filter: invert(15%) sepia(13%) saturate(3038%) hue-rotate(179deg) brightness(95%) contrast(96%);
+        vertical-align: text-bottom;
     }
     .header{
         grid-area: header;
