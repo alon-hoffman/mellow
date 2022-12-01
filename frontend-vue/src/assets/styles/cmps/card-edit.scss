@@ -5,13 +5,17 @@
     inset: 0;
     background-color:#000000a3;
     pointer-events: none;
-
     &.on{
+        // z-index:0;
         opacity: 1;
         pointer-events: all;
     }
 }
-
+.modal-content{
+}
+.edit-blocks{
+    width: 576px;
+}
 .modal{
     position: fixed;
     top: 50%;
@@ -23,14 +27,14 @@
     width: 768px;
     border-radius:3px;
     color: $text-dark;
-    padding: 16px;
+    padding: 1em;
     &.on{
+        // z-index:3;
         opacity: 1;
         pointer-events: all;
     }
     & > * {
         margin-top:0.21em;
-        padding-inline-start: 0.28em;
     }
     &-header{
         & input{
@@ -43,7 +47,6 @@
             height: 32px;
             line-height: 24px;
             min-height: 24px;
-            padding: 4px 8px;
             padding-block-end:0;
             color: $text-dark;
             &:focus{
@@ -59,15 +62,8 @@
     }
 
     & img{
-        width: em(25px);
-        height: em(25px);
-        display: inline;
-        filter: invert(15%) sepia(13%) saturate(3038%) hue-rotate(179deg) brightness(95%) contrast(96%);
-        vertical-align: text-bottom;
+        
     }      
-    & h3{
-        display:inline;
-    }
 
     & .fake-text-area{
         box-shadow: none;
@@ -103,6 +99,9 @@
     &:active{
             background-color:#e4f0f6;
             color:#0079bf;
+            img {
+                filter: invert(34%) sepia(96%) saturate(2808%) hue-rotate(181deg) brightness(87%) contrast(101%);
+            }
 
     }
 
@@ -113,6 +112,7 @@
     display: grid;
     grid-template-columns: 36px 1fr;
     grid-template-rows:  36px 1fr;
+    // padding-inline-start: 0.28em;
     grid-template-areas: 
     "icon header"
     ". content";
@@ -120,11 +120,20 @@
         grid-area: icon;
         align-self: center;
         justify-self: center;
+        width: em(30px);
+        height: em(30px);
+        filter: invert(15%) sepia(13%) saturate(3038%) hue-rotate(179deg) brightness(95%) contrast(96%);
+        vertical-align: text-bottom;
     }
     .header{
         grid-area: header;
+        padding-inline-start: 6px;
+        padding-top: 0.5rem;
+        height: 32px;
     }
     .content{
         grid-area: content;
+        margin-top: -1px;
+        padding-inline-start: 0.55rem;
     }
 }

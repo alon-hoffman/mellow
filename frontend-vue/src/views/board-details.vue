@@ -61,6 +61,7 @@ return this.lists
   },
   methods: {
     toggleEdit(cardId){
+      console.log('toggling card')
       this.$store.commit({type: 'toggleScreen'})
     }
   }
