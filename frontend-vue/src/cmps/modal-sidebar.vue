@@ -157,7 +157,6 @@ export default {
             this.IsMiniModalOpen = true
         },
         closeMiniModal() {
-            console.log(`out = `)
             this.IsMiniModalOpen = false
         },
         setBackgroundCard() {
@@ -167,13 +166,14 @@ export default {
             const idx = this.cardCopy.members.findIndex((m) => m._id === member._id)
             if (idx !== -1) this.cardCopy.members.splice(idx, 1)
             else this.cardCopy.members.push(member)
-            $
+            this.updateCard()
         },
         toggleLabels(label) {
             console.log(`label = `, label)
             const idx = this.cardCopy.labels.findIndex((l) => l === label._id)
             if (idx !== -1) this.cardCopy.labels.splice(idx, 1)
             else this.cardCopy.labels.push(label._id)
+            this.updateCard()
         },
         checkIfInMemberList(member) {
             return this.cardCopy.members.filter((currMember) => currMember._id === member._id).length
