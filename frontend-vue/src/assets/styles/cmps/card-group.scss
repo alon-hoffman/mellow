@@ -39,10 +39,16 @@
         justify-content: space-between;
         align-items: center;
         >*{
+            display:flex;
+        align-items: center;
+        img{
+            width:rem(18px);
+            filter: invert(46%) sepia(9%) saturate(937%) hue-rotate(180deg) brightness(98%) contrast(86%);
+        }
         button{
-            background-color: bisque;
-            width: rem(24px);
-            height: rem(24px);
+            // background-color: $clr-blue;
+            color:unset;
+    
             img{
                 width:rem(24px);
             }
