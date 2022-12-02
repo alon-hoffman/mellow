@@ -12,8 +12,8 @@
       <div v-else @submit.prevent="addList" class="add-list-section" v-click-outside="closeEdit">
         <input type="text" v-model="newTitle"  placeholder="Enter list title..."/>
         <div class="buttons">
-        <button class="clickable">Add list</button>
-        <img @click="closeNewCard" class="clickable" src='../assets/icons/close.png'>
+        <button @click="addList" class="clickable">Add list</button>
+        <img @click="isNewListEdit=false" class="clickable" src='../assets/icons/close.png'>
       </div>
       </div>
     </ul>
@@ -42,8 +42,9 @@ console.log(`this.lists = `, this.lists)
   created() {},
   methods: {
     addList(){
+       console.log("addlist group-list")
       this.isNewListEdit=false
-      this.$emit('saveList', {list: this.newTitle})
+      this.$emit('saveList', this.newTitle)
     },
     closeEdit(){
       this.isNewListEdit=false
