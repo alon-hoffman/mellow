@@ -42,7 +42,7 @@ export default{
     props:{
         isScreen : Boolean
     },
-    emits: ['toggleEdit'],
+    emits: ['toggleEdit','updateCard'],
     data(){
         return {
             demoCard: {

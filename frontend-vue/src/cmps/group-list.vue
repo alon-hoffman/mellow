@@ -32,6 +32,9 @@ export default {
       newTitle:''
     };
   },
+  created(){
+console.log(`this.lists = `, this.lists)
+  },
   components: {
     cardGroup,
   },
