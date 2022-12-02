@@ -6,8 +6,9 @@
         :list="list"
         :key="list.id"
         @cardEdit="$emit('cardEdit', $event)"
+        @saveList="$emit('saveList', $event)"
       />
-      <button v-if="!isNewListEdit" class="add-line-btn" @click="(isNewListEdit=true)">+ Add another list</button>
+      <button v-if="!isNewListEdit" @click="isNewListEdit=true">Add another list</button>
       <form v-else @submit.prevent="addList"  v-click-outside="closeEdit" >
         <input type="text" v-model="newTitle"/>
         <input type="submit">
@@ -25,7 +26,7 @@ export default {
   data() {
     return {
       isNewListEdit:false,
-      newTitle:""
+      newTitle:''
     };
   },
   components: {
@@ -36,7 +37,7 @@ export default {
   methods: {
     addList(){
       this.isNewListEdit=false
-      this.$emit('addList', this.newTitle)
+      this.$emit('saveList', {list: this.newTitle})
     },
     closeEdit(){
       this.isNewListEdit=false
@@ -44,5 +45,3 @@ export default {
   },
 };
 </script>
-
-<!-- $emit('addList') -->

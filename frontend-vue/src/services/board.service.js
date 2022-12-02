@@ -19,6 +19,38 @@ const startingBoard = [
             "imgUrl": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2465x1600/560d0ec362004ae022ec06afdb2b06ef/photo-1599974579688-8dbdd335c77f.jpg"
         },
         "style": {},
+        "labels": [
+            {
+                "_id": "l101",
+                "title": "When possible",
+                "color": "#d6ecd2"
+            },
+            {
+                "_id": "l102",
+                "title": "Important",
+                "color": "#faf3c0"
+            },
+            {
+                "_id": "l103",
+                "title": "",
+                "color": "#fce6c6"
+            },
+            {
+                "_id": "l104",
+                "title": "Urgent",
+                "color": "#f5d3ce"
+            },
+            {
+                "_id": "l105",
+                "title": "",
+                "color": "#eddbf4"
+            },
+            {
+                "_id": "l106",
+                "title": "",
+                "color": "#bcd9ea"
+            },
+        ],
         "members": [
             {
                 "_id": "u101",
@@ -105,38 +137,7 @@ const startingBoard = [
                             "_id": "u102",
                             "fullname": "Itai Morag",
                         }],
-                        "labels": [
-                            {
-                                "id": "l101",
-                                "title": "When possible",
-                                "color": "#d6ecd2"
-                            },
-                            {
-                                "id": "l102",
-                                "title": "Important",
-                                "color": "#faf3c0"
-                            },
-                            {
-                                "id": "l103",
-                                "title": "",
-                                "color": "#fce6c6"
-                            },
-                            {
-                                "id": "l104",
-                                "title": "Urgent",
-                                "color": "#f5d3ce"
-                            },
-                            {
-                                "id": "l105",
-                                "title": "",
-                                "color": "#eddbf4"
-                            },
-                            {
-                                "id": "l106",
-                                "title": "",
-                                "color": "#bcd9ea"
-                            },
-                        ],
+                        "labels": ["l102"],
                         "dueDate": 16156215211,
                     }
                 ],

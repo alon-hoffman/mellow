@@ -38,8 +38,12 @@ button{
     svg{
     background-color: none;
     }
+
 }
 
-::before{
-    font-family: icons;
+textarea{
+    color: $text-dark;
+    ::placeholder{
+        color: $text-dark;
+    }
 }
