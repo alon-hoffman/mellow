@@ -7,7 +7,7 @@
         :key="list.id"
         @cardEdit="$emit('cardEdit', $event)"
       />
-      <button v-if="!isNewListEdit" @click="(isNewListEdit=true)">Add another list</button>
+      <button v-if="!isNewListEdit" class="add-line-btn" @click="(isNewListEdit=true)">+ Add another list</button>
       <form v-else @submit.prevent="addList"  v-click-outside="closeEdit" >
         <input type="text" v-model="newTitle"/>
         <input type="submit">
