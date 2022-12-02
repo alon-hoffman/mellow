@@ -8,11 +8,14 @@
         @cardEdit="$emit('cardEdit', $event)"
         @saveList="$emit('saveList', $event)"
       />
-      <button v-if="!isNewListEdit" @click="isNewListEdit=true">Add another list</button>
-      <form v-else @submit.prevent="addList"  v-click-outside="closeEdit" >
-        <input type="text" v-model="newTitle"/>
-        <input type="submit">
-      </form>
+      <button v-if="!isNewListEdit" class="add-line-btn clickable" @click="isNewListEdit=true">Add another list</button>
+      <div v-else @submit.prevent="addList" class="add-list-section" v-click-outside="closeEdit">
+        <input type="text" v-model="newTitle"  placeholder="Enter list title..."/>
+        <div class="buttons">
+        <button class="clickable">Add list</button>
+        <img @click="closeNewCard" class="clickable" src='../assets/icons/close.png'>
+      </div>
+      </div>
     </ul>
   </section>
 </template>
