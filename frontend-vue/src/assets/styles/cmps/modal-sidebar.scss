@@ -59,13 +59,26 @@
             margin-top: 10px;
             padding: 0 12px 12px;
 
+            .add-checkbox-btn {
+                background-color: #0079bf;
+                width: 73px;
+                height: 32px;
+                border: none;
+                border-radius: 3px;
+                margin: 0;
+                display: block;
+                cursor: pointer;
+                margin-top: 15px;
+            }
+
             .round-circle {
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
             }
-            .color-space{
-                width: 212px; 
+
+            .color-space {
+                width: 212px;
                 text-align: start;
                 height: 32px;
                 color: black;
@@ -86,19 +99,29 @@
                 justify-content: space-between;
                 align-items: center;
             }
-            .label-container{
+
+            .label-container {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 15px;
+                input{
+                    width: 212px;
+                    height: 32px;
+                    border: none;
+                    border-radius: 3px;
+                }
             }
 
             .check-img {
                 width: 12px;
             }
+
             .box-img {
                 width: 15px;
             }
-            .checked-img{
+
+            .checked-img {
                 width: 15px;
             }
 

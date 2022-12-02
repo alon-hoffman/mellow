@@ -31,7 +31,7 @@
                             </ul>
                         </section>
                     </section>
-                    <modal-sidebar @updateCard="updateCard"/>
+                    <modal-sidebar @updateCard="updateCard" @updateLabels="updateLabels"/>
                 </div>
             </article>
 </template>
@@ -42,7 +42,7 @@ export default{
     props:{
         isScreen : Boolean
     },
-    emits: ['toggleEdit','updateCard'],
+    emits: ['toggleEdit','updateCard','updateLabels'],
     data(){
         return {
             demoCard: {
@@ -57,7 +57,10 @@ export default{
         },
         updateCard(card){
             this.$emit('updateCard',card)
-        }
+        },
+        updateLabels(labels){
+            this.$emit('updateLabels',labels)
+        },
     },
     computed: {
     isOn() {

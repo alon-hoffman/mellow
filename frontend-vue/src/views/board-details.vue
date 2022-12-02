@@ -1,7 +1,7 @@
 <template>
   <section class="board-details" v-if="board">
     <!-- <sidebar/> -->
-    <card-edit :isScreen="isScreen" @toggleEdit="toggleEdit" @updateCard="updateCard"/>
+    <card-edit :isScreen="isScreen" @toggleEdit="toggleEdit" @updateCard="updateCard" @updateLabels="updateLabels"/>
     <div class="board-header">
       <div class="board-header-left">
         <h1 class="editable board-details-title">Traco</h1>
@@ -50,7 +50,6 @@ export default {
       return this.$store.getters.isScreen;
     },
     board() {
-      console.log(`this.$store.getters.getCurrBoard = `, this.$store.getters.getCurrBoard)
       return JSON.parse(JSON.stringify(this.$store.getters.getCurrBoard))
     },
   },
@@ -71,6 +70,9 @@ export default {
     updateCard(card){
       this.$store.dispatch({ type: 'saveCard', card})
     },
+    updateLabels(labels){
+      this.$store.commit({ type: "updateLabels",labels });
+    }
     // saveList(list) {
     //   console.log("🚀 ~ file: board-details.vue:84 ~ updateList:", list)
     //   // this.board.groups.push({ title })
