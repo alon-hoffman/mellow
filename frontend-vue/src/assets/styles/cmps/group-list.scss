@@ -1,4 +1,5 @@
 .group-list{
+    margin-inline-end: rem(15px);
     overflow-x: scroll;
     flex-grow: 1;
     ul{
@@ -12,18 +13,52 @@
     .add-line-btn{
         background-color: rgba(255, 255, 255, 0.2);
         font-size: rem(18px);
-        border-radius: 3px;
-        height: rem(45px);
+        border-radius: 5px;
+        height: rem(46px);
         min-width:272px;
         margin-inline-end: em(10px);
         color: $clr1;
         text-align: start;
-        padding:rem(4px);
+        padding:rem(4px) 0 rem(4px) rem(20px);
         margin: rem(4px);
+        font-size:rem(16px);
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     &::before{
         content:"\aa3";
+        padding-inline-end: rem(7px);
     }
 
+    }
+    .add-list-section{
+        .buttons{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        >*{
+            display:flex;
+        align-items: center;
+        img{
+            width:rem(18px);
+            filter: invert(46%) sepia(9%) saturate(937%) hue-rotate(180deg) brightness(98%) contrast(86%);
+        }
+        button{
+            background-color: $light-blue;
+            color:#fff;
+            border-radius: 3px;
+            line-height: 20px;
+            padding-inline: 12px;
+            padding-block: 6px;
+            &:hover{
+                background-color: #026aa7;
+            }
+            &:active{
+                background-color: #055a8c;
+            }
+            img{
+                width:rem(24px);
+            }
+        }
+    }
+    }
     }
 }
