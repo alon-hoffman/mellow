@@ -40,6 +40,7 @@ export const boardStore = {
         updateBoard(state, { board }) {
             const idx = state.boards.findIndex(c => c.id === board._id)
             state.boards.splice(idx, 1, board)
+            console.log(`state.boards = `, state.boards)
         },
         removeBoard(state, { boardId }) {
             state.boards = state.boards.filter(board => board._id !== boardId)
@@ -48,6 +49,25 @@ export const boardStore = {
             const board = JSON.parse(JSON.stringify(state.boards))[0];
             // const board = state.boards.find(c => c.id === _id)
             state.currBoard = board
+        },
+        saveCard(state,{card}){
+            let cardIdx=0
+            let groupIdx=-1
+            state.currBoard.groups.forEach((group,idx1)=>{
+                group.cards.forEach((currCard,idx) => {
+                    if(currCard.id===card.id) {
+                        cardIdx=idx
+                        groupIdx=idx1
+                    }
+                })
+                if(groupIdx>=0) state.currBoard.groups[groupIdx].cards.splice(cardIdx,1,JSON.parse(JSON.stringify(card)))
+            })
+            state.currBoard=state.currBoard
+            const idx = state.boards.findIndex(c => c.id === state.currBoard._id)
+            state.boards.splice(idx, 1, state.currBoard)
+            boardService.save(state.currBoard)
+            console.log(`state.boards = `, state.boards)
+          
         },
 
     },
@@ -98,7 +118,16 @@ export const boardStore = {
                 console.log('Error, could not Add or update list')
                 throw err
             }
-        }
+        },
+        async saveCard({ commit, dispatch, state }, { card }) {
+            try {
+                commit({ type: 'saveCard', card})
+               
+            } catch (err) {
+                console.log('Error, could not Add or update list')
+                throw err
+            }
+        },
 
     }
 }

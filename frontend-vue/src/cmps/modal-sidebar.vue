@@ -114,6 +114,7 @@
 <script>
 import customCard from './custom-card.vue'
 export default {
+    emits: ['updateCard'],
     props: {
         card: {
             type: Object
@@ -124,6 +125,8 @@ export default {
             IsMiniModalOpen: false,
             miniModalTitle: null,
             cardCopy: {
+                id:'c103',
+                title: "im new",
                 members: [
                     {
                         "_id": "u101",
@@ -182,7 +185,8 @@ export default {
             return this.cardCopy.labels.includes(label._id)
         },
         updateCard() {
-            this.$emit('updateCard', this.card)
+            this.$emit('updateCard', this.cardCopy)
+            // this.$emit('updateCard', this.card)
         },
     },
     computed: {
