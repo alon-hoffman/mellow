@@ -1,6 +1,7 @@
 <template>
+  <section class="card-group">
   <div class="flex m-10">
-    <draggable class="dragArea list-group w-full" :list="list" @change="log">
+    <draggable class="dragArea list-group w-full " :list="mutableList" @change="log">
       <div
         class="list-group-item bg-gray-300 m-1 p-3 rounded-md text-center"
         v-for="element in list"
@@ -10,6 +11,7 @@
       </div>
     </draggable>
   </div>
+  </section>
 </template>
 <script>
   import { defineComponent } from 'vue'
@@ -17,18 +19,19 @@
   export default defineComponent({
     components: {
       draggable: VueDraggableNext,
+      props:{
+    list:Object,
+  }
     },
     data() {
       return {
         enabled: true,
-        list: [
-          { name: 'John', id: 1 },
-          { name: 'Joao', id: 2 },
-          { name: 'Jean', id: 3 },
-          { name: 'Gerard', id: 4 },
-        ],
+        mutableList:null,
         dragging: false,
       }
+    },
+    created(){
+      this.mutableList= this.list
     },
     methods: {
       log(event) {
