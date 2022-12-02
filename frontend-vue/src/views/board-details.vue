@@ -65,6 +65,7 @@ export default {
       this.$store.commit({ type: "toggleScreen" });
     },
     saveList(list){
+      this
       this.$store.dispatch({ type: 'saveList', list})
     },
     updateCard(card){
