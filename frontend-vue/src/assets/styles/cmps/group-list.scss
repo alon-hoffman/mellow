@@ -30,16 +30,25 @@
 
     }
     .add-list-section{
+        background-color: $clr2;
+        border-radius: 3px;
+        input{
+            width:rem(300px);
+            margin: rem(5px);
+            padding: rem(10px);
+            // padding: rem(10px) 0 rem(10px) 0;
+            border:2px solid $light-blue;
+        border-radius: 3px;
+
+        }
         .buttons{
+            margin-bottom: 5px;
         display:flex;
-        justify-content: space-between;
-        align-items: center;
-        >*{
-            display:flex;
         align-items: center;
         img{
+            margin-inline-start: 10px;
             width:rem(18px);
-            filter: invert(46%) sepia(9%) saturate(937%) hue-rotate(180deg) brightness(98%) contrast(86%);
+            filter: invert(96%) sepia(9%) saturate(937%) hue-rotate(180deg) brightness(98%) contrast(86%);
         }
         button{
             background-color: $light-blue;
@@ -48,6 +57,8 @@
             line-height: 20px;
             padding-inline: 12px;
             padding-block: 6px;
+            margin-top:0;
+            margin-bottom:0;
             &:hover{
                 background-color: #026aa7;
             }
@@ -55,10 +66,10 @@
                 background-color: #055a8c;
             }
             img{
+                background-color: green;
                 width:rem(24px);
             }
         }
-    }
     }
     }
 }
