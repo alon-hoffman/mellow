@@ -40,7 +40,7 @@ export const boardStore = {
         updateBoard(state, { board }) {
             const idx = state.boards.findIndex(c => c.id === board._id)
             state.boards.splice(idx, 1, board)
-            console.log(`state.boards = `, state.boards)
+            // console.log(`state.boards = `, state.boards)
         },
         removeBoard(state, { boardId }) {
             state.boards = state.boards.filter(board => board._id !== boardId)
@@ -66,10 +66,15 @@ export const boardStore = {
             const idx = state.boards.findIndex(c => c.id === state.currBoard._id)
             state.boards.splice(idx, 1, state.currBoard)
             boardService.save(state.currBoard)
-            console.log(`state.boards = `, state.boards)
           
         },
-
+        updateLabels(state, {labels}){
+            const newLabels=JSON.parse(JSON.stringify(labels))
+            state.currBoard.labels=newLabels
+            const idx = state.boards.findIndex(c => c.id === state.currBoard._id)
+            state.boards.splice(idx, 1, state.currBoard)
+            boardService.save(state.currBoard)
+        }
     },
     actions: {
         async addBoard(context, { board }) {

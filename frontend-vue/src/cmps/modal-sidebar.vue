@@ -59,13 +59,14 @@
                                 <img class="checked-img" v-if="checkIfInLabelList(label)"
                                     src="../assets/icons/checkbox-try.svg">
                                 <img class="box-img" v-else src="../assets/icons/gray-square.svg" alt="">
-                                <button class="color-space" :style="{ backgroundColor: label.color }">
+                                <input v-on:keyup.enter="updateLabels" class="checkbox " v-model="label.title" type="text" :style="{ backgroundColor: label.color }">
+                                <!-- <button class="color-space" :style="{ backgroundColor: label.color }">
                                     <p class="round-circle" :style="{ backgroundColor: label.color }"></p>
-                                </button>
+                                </button> -->
                                 <!-- <input class="checkbox " type="type" :style="{ backgroundColor: label.color }"> -->
                             </div>
                         </label>
-                        <button class="clickable change-text-btn"><img class="pencil-img" src="../assets/icons/edit.svg"
+                        <button @submit="updateLabels" class="clickable change-text-btn"><img class="pencil-img" src="../assets/icons/edit.svg"
                                 alt=""></button>
                     </section>
                 </section>
@@ -74,6 +75,7 @@
                 <section class="mini-modal-body">
                     <span>Title</span>
                     <input v-model="checklist" @submit="addChecklist" type="text">
+                    <button @click="addChecklist" class="add-checkbox-btn">Add</button>
                 </section>
             </template>
             <template v-if="(miniModalTitle === 'Attachment')">
@@ -112,9 +114,10 @@
 
 
 <script>
-import customCard from './custom-card.vue'
+import customCard from './custom-card.vue';
+import { utilService } from '../services/util.service';
 export default {
-    emits: ['updateCard'],
+    emits: ['updateCard','updateLabels'],
     props: {
         card: {
             type: Object
@@ -152,7 +155,7 @@ export default {
     async created() {
         if (!this.$store.getters.boards) await this.$store.dispatch({ type: "loadBoards" });
         this.boardMembers = this.$store.getters.getMembersOfBoard
-        this.boardLabels = this.$store.getters.getLabelsOfBoard
+        this.boardLabels = JSON.parse(JSON.stringify(this.$store.getters.getLabelsOfBoard))
     },
     methods: {
         openMiniModal(value) {
@@ -187,6 +190,21 @@ export default {
         updateCard() {
             this.$emit('updateCard', this.cardCopy)
             // this.$emit('updateCard', this.card)
+        },
+        addChecklist(){
+            const newChecklist={
+                title: `${this.checklist}`,
+                id:utilService.makeId()
+            }
+            if(!this.cardCopy.checklists) this.cardCopy.checklists=[]
+            this.cardCopy.checklists.push(newChecklist)
+            this.IsMiniModalOpen = false
+            this.checklist="checklist"
+            this.updateCard()
+        },
+        updateLabels(){
+            this.$emit('updateLabels', this.boardLabels)
+            console.log(`this.boardLabels = `, this.boardLabels)
         },
     },
     computed: {
